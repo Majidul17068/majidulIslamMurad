@@ -1,20 +1,63 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Md. Majidul Islam | AI/ML Engineer Portfolio
 
-# Run and deploy your AI Studio app
+A modern, responsive portfolio website showcasing AI/ML engineering expertise, featuring animated components, interactive project showcases, and a premium design.
 
-This contains everything you need to run your app locally.
+## 🌐 Live Demo
 
-View your app in AI Studio: https://ai.studio/apps/drive/1FHN8wP7711CqP5s_ghUNI__ei0cvxtkw
+[View Portfolio](https://majidulislammurad.onrender.com)
 
-## Run Locally
+## ✨ Features
 
-**Prerequisites:**  Node.js
+- **Animated Hero Section** with typing code animation
+- **Interactive Project Cards** with architecture diagrams
+- **Professional Experience Timeline**
+- **Research & Education** section with polished design
+- **Responsive Design** - works on all devices
+- **Fast Performance** - built with Vite + React
 
+## 🛠️ Tech Stack
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- **Frontend:** React, TypeScript
+- **Styling:** Tailwind CSS v4
+- **Build Tool:** Vite
+- **Icons:** Lucide React
+- **Deployment:** Render
+
+## 🚀 Run Locally
+
+**Prerequisites:** Node.js 18+
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## 📁 Project Structure
+
+```
+├── components/           # React components
+│   ├── Hero.tsx         # Landing section
+│   ├── Projects.tsx     # Project showcase
+│   ├── Experience.tsx   # Work timeline
+│   ├── Research.tsx     # Education & certs
+│   └── ui/              # Reusable UI components
+├── public/              # Static assets
+├── constants.ts         # Portfolio data
+└── types.ts             # TypeScript interfaces
+```
+
+## 📬 Contact
+
+- **Email:** contact.majidul.islam@gmail.com
+- **LinkedIn:** [majidulislammurad](https://linkedin.com/in/majidulislammurad)
+- **GitHub:** [Majidul17068](https://github.com/Majidul17068)
+
+---
+
+Built with ❤️ by Md. Majidul Islam
