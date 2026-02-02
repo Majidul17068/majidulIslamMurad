@@ -18,21 +18,15 @@ export const Hero: React.FC = () => {
                 </span>
                 AVAILABLE FOR OPPORTUNITIES
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
-                <span className="text-slate-900">AI/ML</span> <br className="hidden sm:block" />
-                <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">Engineer</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+                <span className="text-slate-900 block mb-2">Hi, I'm Majid</span>
+                <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent block">AI/ML Engineer</span>
               </h1>
-              <p className="text-lg sm:text-xl text-slate-500 font-medium">
-                GenAI & Agentic AI
-              </p>
-              <p className="text-base sm:text-lg text-slate-600 font-light max-w-lg mx-auto lg:mx-0">
-                Building intelligent systems that turn data into decisions and automation into advantage.
+
+              <p className="text-lg sm:text-xl text-slate-600 font-light max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                With hands-on experience building scalable AI Solutions, production pipelines and real-world Agentic AI systems. I’m passionate about converting research into reliable products that users love.
               </p>
             </div>
-
-            <p className="text-sm text-slate-500 border-l-2 border-primary/30 pl-4 max-w-md mx-auto lg:mx-0 text-left">
-              Specialized in Edge AI optimization, LLM RAG pipelines, and multi-agent orchestration.
-            </p>
 
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3">
               <a
