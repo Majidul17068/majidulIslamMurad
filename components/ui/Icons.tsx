@@ -20,7 +20,9 @@ import {
   Code,
   Network,
   Sparkles,
-  Boxes
+  Boxes,
+  CheckCircle2,
+  Facebook
 } from 'lucide-react';
 
 export const Icons = {
@@ -44,5 +46,7 @@ export const Icons = {
   Code,
   Network,
   Sparkles,
-  Boxes
+  Boxes,
+  CheckCircle2,
+  Facebook
 };

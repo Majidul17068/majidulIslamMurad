@@ -92,7 +92,24 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Right Section: Social Icons + Mobile Menu Toggle */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <a
+              href={`mailto:${SOCIAL_LINKS.email}`}
+              className="hidden sm:flex text-slate-500 hover:text-primary transition-colors p-1"
+              aria-label="Email"
+            >
+              <Icons.Mail size={18} />
+            </a>
+            <a
+              href={`tel:${SOCIAL_LINKS.phone}`}
+              className="hidden sm:flex text-slate-500 hover:text-primary transition-colors p-1"
+              aria-label="Call"
+            >
+              <Icons.Phone size={18} />
+            </a>
+
+            <div className="w-px h-4 bg-slate-200 hidden sm:block mx-1"></div>
+
             <a
               href={SOCIAL_LINKS.github}
               target="_blank"
@@ -110,6 +127,15 @@ export const Navbar: React.FC = () => {
               aria-label="LinkedIn Profile"
             >
               <Icons.Linkedin size={18} />
+            </a>
+            <a
+              href={SOCIAL_LINKS.facebook}
+              target="_blank"
+              rel="noreferrer"
+              className="hidden sm:flex text-slate-500 hover:text-blue-600 transition-colors p-1"
+              aria-label="Facebook Profile"
+            >
+              <Icons.Facebook size={18} />
             </a>
 
             {/* Mobile Menu Toggle */}

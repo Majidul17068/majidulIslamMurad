@@ -4,7 +4,8 @@ export const SOCIAL_LINKS = {
   email: "contact.majidul.islam@gmail.com",
   phone: "+8801632220262",
   linkedin: "https://www.linkedin.com/in/majidulislammurad/",
-  github: "https://github.com/Majidul17068"
+  github: "https://github.com/Majidul17068",
+  facebook: "https://www.facebook.com/mazidul.islam.murad"
 };
 
 export const PROJECTS: Project[] = [
@@ -19,7 +20,9 @@ export const PROJECTS: Project[] = [
       "Collaborative decision making"
     ],
     techStack: ["CrewAI Multi-Agent", "LangFuse", "FastAPI", "In-house LLMs", "Vector DB"],
-    diagramType: "AGENTIC"
+    diagramType: "AGENTIC",
+    githubUrl: "mailto:contact.majidul.islam@gmail.com?subject=Demo Request: Care Home AI Solution EMPATHIKA",
+    buttonText: "Ask for Demo"
   },
   {
     id: "2",
@@ -32,7 +35,8 @@ export const PROJECTS: Project[] = [
       "API integration for downstream systems"
     ],
     techStack: ["Tesseract", "OpenCV", "Python", "FastAPI", "Deep Learning"],
-    diagramType: "OCR_PIPELINE"
+    diagramType: "OCR_PIPELINE",
+    githubUrl: "https://github.com/Majidul17068/care-data-migration"
   },
   {
     id: "3",
@@ -45,7 +49,8 @@ export const PROJECTS: Project[] = [
       "Source attribution engine"
     ],
     techStack: ["LangChain", "DeepSeek", "ChromaDB", "Python"],
-    diagramType: "RAG"
+    diagramType: "RAG",
+    githubUrl: "https://github.com/Majidul17068/KFG-HR-Bot"
   },
   {
     id: "4",
@@ -58,7 +63,8 @@ export const PROJECTS: Project[] = [
       "Scalable Big Data processing"
     ],
     techStack: ["PySpark", "Pandas", "Scikit-Learn", "FastAPI"],
-    diagramType: "DATA_PIPELINE"
+    diagramType: "DATA_PIPELINE",
+    githubUrl: "https://github.com/Majidul17068/AI-sales-forecast-demo"
   },
   {
     id: "5",
@@ -71,7 +77,8 @@ export const PROJECTS: Project[] = [
       "Healthcare compliance standards"
     ],
     techStack: ["OCR", "NLP", "Python", "Automation"],
-    diagramType: "DATA_PIPELINE"
+    diagramType: "DATA_PIPELINE",
+    githubUrl: "https://github.com/Majidul17068/dmd_downloader"
   },
   {
     id: "6",
@@ -84,7 +91,9 @@ export const PROJECTS: Project[] = [
       "Low-latency vision pipeline"
     ],
     techStack: ["CUDA", "TensorRT", "Jetson", "C++"],
-    diagramType: "EDGE_PIPELINE"
+    diagramType: "EDGE_PIPELINE",
+    githubUrl: "mailto:contact.majidul.islam@gmail.com?subject=Demo Request: Edge AI & GPU Optimization",
+    buttonText: "Ask for Demo"
   }
 ];
 
@@ -146,22 +155,22 @@ export const EXPERIENCE: Experience[] = [
 export const SKILLS: SkillCategory[] = [
   {
     title: "Edge AI & GPU Systems",
-    icon: "cpu",
+    icon: "Cpu",
     skills: ["NVIDIA Jetson", "CUDA / TensorRT", "FP16 / INT8 Opt.", "Real-time Inference"]
   },
   {
     title: "LLM Systems & RAG",
-    icon: "brain",
+    icon: "Brain",
     skills: ["Transformers", "LangChain / LlamaIndex", "ChromaDB / Pinecone", "Prompt Engineering"]
   },
   {
     title: "Agentic AI",
-    icon: "bot",
+    icon: "Bot",
     skills: ["CrewAI", "LangGraph", "Multi-agent Systems", "Autonomous Reasoning"]
   },
   {
     title: "ML Infrastructure",
-    icon: "server",
+    icon: "Server",
     skills: ["FastAPI / Streamlit", "MLflow / Docker", "AWS / Azure / GCP", "CI/CD Pipelines"]
   }
 ];

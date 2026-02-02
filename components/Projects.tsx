@@ -36,15 +36,32 @@ export const Projects: React.FC = () => {
             return (
               <div
                 key={project.id}
-                className="group bg-white rounded-2xl border border-slate-200 hover:border-slate-300 flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                className="group relative bg-white rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] flex flex-col h-full"
               >
-                <div className="p-6 sm:p-8 flex-1 flex flex-col">
+                {/* Gradient Border Effect */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-cyan-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm"></div>
+
+                {/* Main Card Content */}
+                <div className="flex-1 flex flex-col p-6 sm:p-8 bg-white rounded-2xl border-2 border-slate-200 group-hover:border-primary/20 relative z-10 transition-all duration-300">
                   {/* Project Type Badge - Key for recruiter scanning */}
                   <div className="flex items-center justify-between mb-4">
                     <span className={`px-2.5 py-1 text-xs font-semibold rounded-full border ${typeInfo.color}`}>
                       {typeInfo.label}
                     </span>
-                    <span className="text-xs text-slate-400 font-mono">#{project.id}</span>
+                    <a
+                      href={project.githubUrl || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 px-3 py-1 bg-slate-50 border border-slate-200 rounded-lg text-xs font-medium text-slate-600 hover:text-primary hover:border-primary/50 hover:bg-white hover:shadow-sm transition-all z-20"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      {project.buttonText === "Ask for Demo" ? (
+                        <Icons.Mail size={12} />
+                      ) : (
+                        <Icons.Github size={12} />
+                      )}
+                      {project.buttonText || "Demo Github"}
+                    </a>
                   </div>
 
                   <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">
@@ -83,7 +100,7 @@ export const Projects: React.FC = () => {
 
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="w-full mt-auto flex items-center justify-center gap-2 bg-slate-900 text-white py-3 rounded-lg text-sm font-medium hover:bg-primary transition-colors"
+                    className="w-full mt-auto flex items-center justify-center gap-2 bg-slate-900 text-white py-3 rounded-lg text-sm font-medium hover:bg-primary transition-colors group-hover:shadow-lg group-hover:shadow-primary/25"
                     aria-label={`View ${project.title} architecture`}
                   >
                     <Icons.Layers size={16} /> View Architecture

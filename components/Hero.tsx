@@ -11,13 +11,13 @@ export const Hero: React.FC = () => {
           {/* Left Column: Content */}
           <div className="order-2 lg:order-1 space-y-6 animate-fade-in-up text-center lg:text-left">
             <div className="space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-mono font-medium tracking-wide">
+              {/* <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-mono font-medium tracking-wide">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                 </span>
                 AVAILABLE FOR OPPORTUNITIES
-              </div>
+              </div> */}
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
                 <span className="text-slate-900 block mb-2">Hi, I'm Majid</span>
                 <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent block">AI/ML Engineer</span>
@@ -46,7 +46,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Right Column: Profile Image + Code Panel */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end hidden md:flex">
             <div className="relative pt-20 lg:pt-24">
               {/* Code Panel - positioned behind */}
               <div className="hidden md:block">

@@ -5,6 +5,8 @@ export interface Project {
   architectureHighlights: string[];
   techStack: string[];
   diagramType: 'RAG' | 'EDGE_PIPELINE' | 'DATA_PIPELINE' | 'AGENTIC' | 'OCR_PIPELINE';
+  githubUrl?: string;
+  buttonText?: string;
 }
 
 export interface Experience {
