@@ -5,9 +5,42 @@ import { SOCIAL_LINKS } from '../constants';
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+
+      // Active section detection
+      const sections = navLinks.map(link => link.href.substring(1));
+
+      // Check if we're at the bottom of the page - activate last section
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+        setActiveSection(navLinks[navLinks.length - 1].href.substring(1));
+        return;
+      }
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // detailed check: if the section top is near the viewport top
+          // OR if we are at the very top of page (for 'about' section)
+          if (window.scrollY < 100 && section === 'about') {
+            setActiveSection('about');
+            break;
+          }
+          if (rect.top >= -150 && rect.top <= 200) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    // Run once on mount to set initial state correctly
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -18,6 +51,8 @@ export const Navbar: React.FC = () => {
   };
 
   const navLinks = [
+    { name: 'About', href: '#about' },
+    { name: 'Expertise', href: '#expertise' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
     { name: 'Research', href: '#research' },
@@ -33,7 +68,7 @@ export const Navbar: React.FC = () => {
             <img
               src="/logo.png"
               alt="Majid - AI Specialist"
-              className="h-10 sm:h-12 w-auto object-contain"
+              className="h-14 sm:h-20 w-auto object-contain"
             />
           </a>
 
@@ -43,9 +78,15 @@ export const Navbar: React.FC = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-primary transition-colors"
+                className={`text-sm font-medium transition-colors relative py-1 ${activeSection === link.href.substring(1)
+                  ? 'text-primary'
+                  : 'text-slate-600 hover:text-primary'
+                  }`}
               >
                 {link.name}
+                {activeSection === link.href.substring(1) && (
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full animate-fade-in" />
+                )}
               </a>
             ))}
           </div>
@@ -102,7 +143,10 @@ export const Navbar: React.FC = () => {
                     key={link.name}
                     href={link.href}
                     onClick={handleLinkClick}
-                    className="block py-3 px-4 text-base font-medium text-slate-700 hover:text-primary hover:bg-slate-50 rounded-lg transition-colors"
+                    className={`block py-3 px-4 text-base font-medium rounded-lg transition-colors ${activeSection === link.href.substring(1)
+                      ? 'text-primary bg-primary/5'
+                      : 'text-slate-700 hover:text-primary hover:bg-slate-50'
+                      }`}
                   >
                     {link.name}
                   </a>
