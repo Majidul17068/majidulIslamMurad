@@ -46,15 +46,15 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Right Column: Profile Image + Code Panel */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end hidden md:flex">
-            <div className="relative pt-20 lg:pt-24">
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end mb-12 md:mb-0">
+            <div className="relative pt-0 md:pt-20 lg:pt-24">
               {/* Code Panel - positioned behind */}
               <div className="hidden md:block">
                 <CodePanel />
               </div>
 
               {/* Profile Photo - positioned to upper-left corner of code panel */}
-              <div className="md:absolute md:top-0 md:-left-16 lg:-left-20 z-20">
+              <div className="hidden md:block md:absolute md:top-0 md:-left-16 lg:-left-20 z-20">
                 <div className="relative w-36 h-36 sm:w-44 sm:h-44 lg:w-52 lg:h-52">
                   {/* Multi-layer ambient glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-rose-500/40 via-orange-500/30 to-amber-500/40 rounded-full blur-2xl scale-110 animate-pulse-slow" />
@@ -93,10 +93,13 @@ export const Hero: React.FC = () => {
                 </div>
               </div>
 
-              {/* Mobile-only: Just show photo centered */}
-              <div className="md:hidden relative w-48 h-48">
-                <div className="absolute inset-4 bg-gradient-to-tr from-primary/15 to-accent/15 rounded-full blur-2xl -z-10" />
-                <div className="w-full h-full rounded-full border-2 border-white shadow-xl overflow-hidden relative z-10 bg-slate-100">
+              {/* Mobile-only: Rich Profile View */}
+              <div className="md:hidden relative w-48 h-48 mx-auto">
+                {/* Multi-layer ambient glow effect (Matching Desktop) */}
+                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/40 via-orange-500/30 to-amber-500/40 rounded-full blur-2xl scale-110 animate-pulse-slow" />
+                <div className="absolute inset-2 bg-gradient-to-tr from-rose-600/30 to-orange-500/20 rounded-full blur-xl" />
+
+                <div className="w-full h-full rounded-full border-4 border-white shadow-xl overflow-hidden relative z-10 bg-slate-100">
                   <img
                     src="/profile.png"
                     alt="Md. Majidul Islam - AI/ML Engineer"
@@ -104,10 +107,25 @@ export const Hero: React.FC = () => {
                     loading="eager"
                   />
                 </div>
-                <div className="absolute top-2 -left-3 bg-white p-2 rounded-lg shadow-lg border border-slate-100">
-                  <Icons.Cpu className="text-slate-700" size={18} />
+
+                {/* Mobile Badges - All 4 Icons */}
+                {/* Top-left: Code */}
+                <div className="absolute top-0 -left-2 bg-white p-2 rounded-xl shadow-lg border border-slate-100">
+                  <Icons.Code className="text-violet-500" size={16} />
                 </div>
-                <div className="absolute bottom-2 -right-3 bg-white p-2 rounded-lg shadow-lg border border-slate-100">
+
+                {/* Top-right: Sparkles/AI */}
+                <div className="absolute top-0 -right-2 bg-white p-2 rounded-xl shadow-lg border border-slate-100">
+                  <Icons.Sparkles className="text-amber-500" size={16} />
+                </div>
+
+                {/* Bottom-left: CPU/Hardware */}
+                <div className="absolute bottom-2 -left-2 bg-white p-2 rounded-xl shadow-lg border border-slate-100">
+                  <Icons.Cpu className="text-emerald-500" size={16} />
+                </div>
+
+                {/* Bottom-right: Brain/ML */}
+                <div className="absolute bottom-2 -right-2 bg-white p-2.5 rounded-xl shadow-lg border border-slate-100">
                   <Icons.Brain className="text-primary" size={18} />
                 </div>
               </div>
