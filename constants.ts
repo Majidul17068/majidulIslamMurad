@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
       "Real-time monitoring agents",
       "Collaborative decision making"
     ],
-    techStack: ["CrewAI Multi-Agent", "LangFuse", "FastAPI", "In-house LLMs", "Vector DB"],
+    techStack: ["Multi-Agent", "LangFuse", "FastAPI", "In-house LLMs", "Vector DB"],
     diagramType: "AGENTIC",
     githubUrl: "mailto:contact.majidul.islam@gmail.com?subject=Demo Request: Care Home AI Solution EMPATHIKA",
     buttonText: "Ask for Demo",
@@ -108,10 +108,10 @@ export const EXPERIENCE: Experience[] = [
     period: "Aug 2025 - Present",
     location: "Dhaka, Bangladesh",
     points: [
-      "Optimized Edge AI pipelines on NVIDIA Jetson using TensorRT & CUDA (FP16/INT8), significantly reducing inference latency.",
-      "Developed multimodal document understanding systems combining vision, text, and OCR for automated data extraction.",
-      "Orchestrated complex agentic workflows using CrewAI and LangGraph to decompose and execute multi-step tasks.",
-      "Implemented full-stack LLM observability with Phoenix and Langfuse to monitor performance and mitigate hallucinations."
+      "Optimizing Edge AI pipelines on NVIDIA Jetson using TensorRT & CUDA (FP16/INT8), significantly reducing inference latency.",
+      "Developing multimodal document understanding systems combining vision, text, and OCR for automated data extraction.",
+      "Orchestrating complex agentic workflows using CrewAI and LangGraph to decompose and execute multi-step tasks.",
+      "Implementing full-stack LLM observability with Phoenix and Langfuse to monitor performance and mitigate hallucinations."
     ]
   },
   {
