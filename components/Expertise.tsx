@@ -16,12 +16,12 @@ export const Expertise: React.FC = () => {
             const IconComponent = Icons[category.icon as keyof typeof Icons] || Icons.Terminal;
 
             return (
-              <div key={category.title} className="group relative bg-white rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)]">
-                {/* Gradient Border Effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-cyan-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm"></div>
+              <div key={category.title} className="group relative bg-white rounded-2xl transition-all duration-300 shadow-md hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)]">
+                {/* Gradient Border Effect - Always on for mobile (subtle), stronger on hover */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-cyan-300 opacity-20 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm"></div>
 
                 {/* Main Card Content */}
-                <div className="h-full p-8 bg-white rounded-2xl border-2 border-slate-200 relative z-10 transition-all duration-300 group-hover:border-primary/20">
+                <div className="h-full p-8 bg-white rounded-2xl border-2 border-slate-100 group-hover:border-primary/20 relative z-10 transition-all duration-300">
                   {/* Icon Header */}
                   <div className="w-14 h-14 bg-primary/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-cyan-400 group-hover:text-white transition-all duration-300">
                     <IconComponent className="text-primary group-hover:text-white transition-colors duration-300" size={26} />

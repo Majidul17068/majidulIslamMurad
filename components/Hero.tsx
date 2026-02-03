@@ -49,12 +49,13 @@ export const Hero: React.FC = () => {
           <div className="order-1 lg:order-2 flex justify-center lg:justify-end mb-12 md:mb-0">
             <div className="relative pt-0 md:pt-20 lg:pt-24">
               {/* Code Panel - positioned behind */}
-              <div className="hidden md:block">
+              <div className="block transform scale-90 sm:scale-100 origin-center transition-transform duration-500">
                 <CodePanel />
               </div>
 
               {/* Profile Photo - positioned to upper-left corner of code panel */}
-              <div className="hidden md:block md:absolute md:top-0 md:-left-16 lg:-left-20 z-20">
+              {/* FIXED: Removed negative margins on mobile to prevent overflow. Only apply offset on md+ screens. */}
+              <div className="hidden md:block md:absolute md:top-0 md:left-0 lg:-left-20 z-20">
                 <div className="relative w-36 h-36 sm:w-44 sm:h-44 lg:w-52 lg:h-52">
                   {/* Multi-layer ambient glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-rose-500/40 via-orange-500/30 to-amber-500/40 rounded-full blur-2xl scale-110 animate-pulse-slow" />
@@ -93,47 +94,47 @@ export const Hero: React.FC = () => {
                 </div>
               </div>
 
-              {/* Mobile-only: Rich Profile View */}
-              <div className="md:hidden relative w-48 h-48 mx-auto">
-                {/* Multi-layer ambient glow effect (Matching Desktop) */}
-                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/40 via-orange-500/30 to-amber-500/40 rounded-full blur-2xl scale-110 animate-pulse-slow" />
-                <div className="absolute inset-2 bg-gradient-to-tr from-rose-600/30 to-orange-500/20 rounded-full blur-xl" />
+            </div>
 
-                <div className="w-full h-full rounded-full border-4 border-white shadow-xl overflow-hidden relative z-10 bg-slate-100">
-                  <img
-                    src="/profile.png"
-                    alt="Md. Majidul Islam - AI/ML Engineer"
-                    className="w-full h-full object-cover object-top"
-                    loading="eager"
-                  />
-                </div>
+            {/* Mobile-only: Rich Profile View - Centered & Balanced */}
+            <div className="md:hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40">
+              {/* Multi-layer ambient glow effect (Matching Desktop) */}
+              <div className="absolute inset-0 bg-gradient-to-br from-rose-500/40 via-orange-500/30 to-amber-500/40 rounded-full blur-2xl scale-110 animate-pulse-slow" />
+              <div className="absolute inset-2 bg-gradient-to-tr from-rose-600/30 to-orange-500/20 rounded-full blur-xl" />
 
-                {/* Mobile Badges - All 4 Icons */}
-                {/* Top-left: Code */}
-                <div className="absolute top-0 -left-2 bg-white p-2 rounded-xl shadow-lg border border-slate-100">
-                  <Icons.Code className="text-violet-500" size={16} />
-                </div>
+              <div className="w-full h-full rounded-full border-4 border-white shadow-xl overflow-hidden relative z-10 bg-slate-100">
+                <img
+                  src="/profile.png"
+                  alt="Md. Majidul Islam - AI/ML Engineer"
+                  className="w-full h-full object-cover object-top"
+                  loading="eager"
+                />
+              </div>
 
-                {/* Top-right: Sparkles/AI */}
-                <div className="absolute top-0 -right-2 bg-white p-2 rounded-xl shadow-lg border border-slate-100">
-                  <Icons.Sparkles className="text-amber-500" size={16} />
-                </div>
+              {/* Mobile Badges - All 4 Icons */}
+              {/* Top-left: Code */}
+              <div className="absolute top-0 -left-2 bg-white p-1.5 rounded-xl shadow-lg border border-slate-100">
+                <Icons.Code className="text-violet-500" size={14} />
+              </div>
 
-                {/* Bottom-left: CPU/Hardware */}
-                <div className="absolute bottom-2 -left-2 bg-white p-2 rounded-xl shadow-lg border border-slate-100">
-                  <Icons.Cpu className="text-emerald-500" size={16} />
-                </div>
+              {/* Top-right: Sparkles/AI */}
+              <div className="absolute top-0 -right-2 bg-white p-1.5 rounded-xl shadow-lg border border-slate-100">
+                <Icons.Sparkles className="text-amber-500" size={14} />
+              </div>
 
-                {/* Bottom-right: Brain/ML */}
-                <div className="absolute bottom-2 -right-2 bg-white p-2.5 rounded-xl shadow-lg border border-slate-100">
-                  <Icons.Brain className="text-primary" size={18} />
-                </div>
+              {/* Bottom-left: CPU/Hardware */}
+              <div className="absolute bottom-2 -left-2 bg-white p-1.5 rounded-xl shadow-lg border border-slate-100">
+                <Icons.Cpu className="text-emerald-500" size={14} />
+              </div>
+
+              {/* Bottom-right: Brain/ML */}
+              <div className="absolute bottom-2 -right-2 bg-white p-2 rounded-xl shadow-lg border border-slate-100">
+                <Icons.Brain className="text-primary" size={16} />
               </div>
             </div>
           </div>
-
         </div>
       </div>
-    </section>
+    </section >
   );
 };

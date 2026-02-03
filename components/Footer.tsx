@@ -12,17 +12,16 @@ export const Footer: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10">
 
         {/* Main Contact Card */}
-        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 mb-20 shadow-2xl">
+        <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-6 md:p-12 mb-12 md:mb-20 shadow-2xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
 
             {/* Left: Heading & Context */}
             <div className="space-y-6 text-center lg:text-left">
-              <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight">
-                Let’s Build <br />
-                <span className="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Something Amazing</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Let's Build Something <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-300">Amazing</span>
               </h2>
-              <p className="text-slate-400 text-lg max-w-md mx-auto lg:mx-0 leading-relaxed">
-                Open for collaborations in AI Engineering, Agentic Workflows, and High-Performance Edge Computing.
+              <p className="text-slate-400 text-lg leading-relaxed max-w-md mx-auto lg:mx-0">
+                I love to contribute to the AI community, research and High-Performance Edge Computing.
               </p>
 
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium">

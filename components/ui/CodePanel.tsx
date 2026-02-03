@@ -131,7 +131,7 @@ export const CodePanel: React.FC = () => {
                         </div>
 
                         {/* Code Content - with top padding to avoid photo overlap */}
-                        <div className="pt-16 pb-6 pl-6 pr-6 font-mono text-base leading-7 min-h-[380px]">
+                        <div className="pt-16 pb-6 pl-4 pr-4 md:pl-6 md:pr-6 font-mono text-xs sm:text-sm lg:text-base leading-relaxed md:leading-7 min-h-[300px] md:min-h-[380px]">
                               <pre className="whitespace-pre-wrap">{renderCode()}</pre>
                         </div>
                   </div>
