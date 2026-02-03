@@ -98,13 +98,26 @@ export const Projects: React.FC = () => {
                     ))}
                   </div>
 
-                  <button
-                    onClick={() => setSelectedProject(project)}
-                    className="w-full mt-auto flex items-center justify-center gap-2 bg-slate-900 text-white py-3 rounded-lg text-sm font-medium hover:bg-primary transition-colors group-hover:shadow-lg group-hover:shadow-primary/25"
-                    aria-label={`View ${project.title} architecture`}
-                  >
-                    <Icons.Layers size={16} /> View Architecture
-                  </button>
+                  {/* Conditional Button: Book Demo OR View Architecture */}
+                  {project.bookDemoUrl ? (
+                    <a
+                      href={project.bookDemoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full mt-auto flex items-center justify-center gap-2 bg-slate-900 text-white py-3 rounded-lg text-sm font-medium hover:bg-primary transition-colors group-hover:shadow-lg group-hover:shadow-primary/25"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Icons.Calendar size={16} /> Book Demo
+                    </a>
+                  ) : (
+                    <button
+                      onClick={() => setSelectedProject(project)}
+                      className="w-full mt-auto flex items-center justify-center gap-2 bg-slate-900 text-white py-3 rounded-lg text-sm font-medium hover:bg-primary transition-colors group-hover:shadow-lg group-hover:shadow-primary/25"
+                      aria-label={`View ${project.title} architecture`}
+                    >
+                      <Icons.Layers size={16} /> View Architecture
+                    </button>
+                  )}
                 </div>
               </div>
             );

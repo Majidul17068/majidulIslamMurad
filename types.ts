@@ -7,6 +7,7 @@ export interface Project {
   diagramType: 'RAG' | 'EDGE_PIPELINE' | 'DATA_PIPELINE' | 'AGENTIC' | 'OCR_PIPELINE';
   githubUrl?: string;
   buttonText?: string;
+  bookDemoUrl?: string;
 }
 
 export interface Experience {

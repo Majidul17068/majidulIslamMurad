@@ -24,7 +24,7 @@ export const Expertise: React.FC = () => {
                 <div className="h-full p-8 bg-white rounded-2xl border-2 border-slate-200 relative z-10 transition-all duration-300 group-hover:border-primary/20">
                   {/* Icon Header */}
                   <div className="w-14 h-14 bg-primary/5 rounded-xl flex items-center justify-center mb-6 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-cyan-400 group-hover:text-white transition-all duration-300">
-                    <IconComponent className="text-primary transition-colors duration-300" size={26} />
+                    <IconComponent className="text-primary group-hover:text-white transition-colors duration-300" size={26} />
                   </div>
 
                   <h3 className="text-xl font-bold text-slate-900 mb-4 group-hover:text-primary transition-colors">{category.title}</h3>

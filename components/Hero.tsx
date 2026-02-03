@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
               </h1>
 
               <p className="text-lg sm:text-xl text-slate-600 font-light max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                With hands-on experience building scalable AI Solutions, production pipelines and real-world Agentic AI systems. I’m passionate about converting research into reliable products that users love.
+                I have hands on experience building scalable AI solutions, production pipelines and real-world Agentic AI solutions. I’m passionate about converting research into reliable products that users love.
               </p>
             </div>
 

@@ -12,7 +12,7 @@ export const PROJECTS: Project[] = [
   {
     id: "1",
     title: "Care Home AI Solution EMPATHIKA",
-    problem: "Lack of personalized monitoring for care home residents.",
+    problem: "Personalized monitoring and complete soutions for care home residents.",
     architectureHighlights: [
       "Multi-agent orchestration",
       "Personalized care plan generation",
@@ -22,7 +22,8 @@ export const PROJECTS: Project[] = [
     techStack: ["CrewAI Multi-Agent", "LangFuse", "FastAPI", "In-house LLMs", "Vector DB"],
     diagramType: "AGENTIC",
     githubUrl: "mailto:contact.majidul.islam@gmail.com?subject=Demo Request: Care Home AI Solution EMPATHIKA",
-    buttonText: "Ask for Demo"
+    buttonText: "Ask for Demo",
+    bookDemoUrl: "https://tulip-tech.com/"
   },
   {
     id: "2",
@@ -36,7 +37,8 @@ export const PROJECTS: Project[] = [
     ],
     techStack: ["Tesseract", "OpenCV", "Python", "FastAPI", "Deep Learning"],
     diagramType: "OCR_PIPELINE",
-    githubUrl: "https://github.com/Majidul17068/care-data-migration"
+    githubUrl: "https://github.com/Majidul17068/care-data-migration",
+    bookDemoUrl: "https://tulip-tech.com/"
   },
   {
     id: "3",
@@ -103,13 +105,13 @@ export const EXPERIENCE: Experience[] = [
     id: "1",
     company: "TulipTech Limited",
     role: "AI/ML Engineer",
-    period: "Aug 2025 - Present", // Keeping date from prompt, though future dated
+    period: "Aug 2025 - Present",
     location: "Dhaka, Bangladesh",
     points: [
-      "Optimized Edge AI pipelines on NVIDIA Jetson using TensorRT & CUDA (FP16/INT8).",
-      "Developed multimodal systems combining vision, text, and OCR for document understanding.",
-      "Orchestrated multi-agent systems using CrewAI/LangGraph for complex task decomposition.",
-      "Implemented LLM observability (Phoenix/Langfuse) to reduce hallucination rates."
+      "Optimized Edge AI pipelines on NVIDIA Jetson using TensorRT & CUDA (FP16/INT8), significantly reducing inference latency.",
+      "Developed multimodal document understanding systems combining vision, text, and OCR for automated data extraction.",
+      "Orchestrated complex agentic workflows using CrewAI and LangGraph to decompose and execute multi-step tasks.",
+      "Implemented full-stack LLM observability with Phoenix and Langfuse to monitor performance and mitigate hallucinations."
     ]
   },
   {
@@ -119,9 +121,9 @@ export const EXPERIENCE: Experience[] = [
     period: "Mar 2025 - Aug 2025",
     location: "Dhaka, Bangladesh",
     points: [
-      "Designed autonomous reasoning agents using multi-agent frameworks.",
-      "Built real-time big data processing pipelines with PySpark.",
-      "Established MLOps pipelines (MLflow) for automated model training and deployment."
+      "Designed autonomous reasoning agents within multi-agent frameworks to automate decision-making processes.",
+      "Built real-time big data processing pipelines using PySpark for high-volume data ingestion.",
+      "Established robust MLOps pipelines with MLflow to automate model training, tracking, and deployment."
     ]
   },
   {
@@ -131,9 +133,9 @@ export const EXPERIENCE: Experience[] = [
     period: "Oct 2022 - Mar 2025",
     location: "Dhaka, Bangladesh",
     points: [
-      "Deployed scalable AI solutions using FastAPI and Azure cloud infrastructure.",
-      "Engineered secure FastAPIs and managed MongoDB document stores.",
-      "Led Cloud & DevOps integration for AI model lifecycle management."
+      "Deployed scalable AI microservices using FastAPI on resilient Azure cloud infrastructure.",
+      "Engineered secure and efficient document stores using MongoDB for high-throughput applications.",
+      "Led Cloud & DevOps integration strategies to streamline the complete AI model lifecycle."
     ]
   },
   {
@@ -143,11 +145,11 @@ export const EXPERIENCE: Experience[] = [
     period: "Dec 2016 - Mar 2018",
     location: "Bangladesh",
     points: [
-      "Leadership & Discipline: Completed intensive military training, strengthening leadership, teamwork and decision-making under pressure.",
-      "Maritime & Tactical Training: Acquired hands-on experience in naval operations, navigation and tactical combat strategies.",
-      "Strategic Planning & Crisis Management: Trained to operate effectively in high-stress environments, making quick and strategic decisions.",
-      "Technical & Weaponry Knowledge: Gained foundational knowledge in naval engineering, weapon systems and maritime technologies.",
-      "Ethics & Professionalism: Maintained strong discipline, integrity and commitment to service throughout military service."
+      "Leadership & Discipline: Completed rigorous military training, cultivating strong leadership and decision-making skills under pressure.",
+      "Maritime Operations: Gained practical expertise in naval navigation, tactical strategy, and maritime combat operations.",
+      "Strategic Crisis Management: Trained to execute strategic decisions effectively in high-stress, critical environments.",
+      "Technical Foundations: Acquired foundational knowledge in naval engineering, weapon systems, and defense technologies.",
+      "Professional Ethics: Maintained the highest standards of integrity, discipline, and commitment to service."
     ]
   }
 ];
@@ -180,7 +182,7 @@ export const RESEARCH: ResearchItem[] = [
     title: "Multi Factor Authentication Kerberos",
     venue: "IEEE SEM Vol -12",
     date: "Jan 2024",
-    description: "Research on Internet Banking Cyber Security in Bangladesh focusing on MFA solutions."
+    description: "Research on Internet Banking Cybersecurity in Bangladesh focusing on MFA solutions."
   }
 ];
 
@@ -188,5 +190,5 @@ export const CERTIFICATIONS: Certification[] = [
   { title: "Oracle Certified Foundation Associate", issuer: "Oracle University", year: "2025" },
   { title: "Agile Project Management Practitioner", issuer: "HP LIFE", year: "2024" },
   { title: "Admin Official Certification", issuer: "monday.com", year: "2023" },
-  { title: "Cyber Security (Ethical Hacking)", issuer: "Arena Web Security", year: "2022" }
+  { title: "Cybersecurity (Ethical Hacking)", issuer: "Arena Web Security", year: "2022" }
 ];

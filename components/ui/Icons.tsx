@@ -22,7 +22,8 @@ import {
   Sparkles,
   Boxes,
   CheckCircle2,
-  Facebook
+  Facebook,
+  Calendar
 } from 'lucide-react';
 
 export const Icons = {
@@ -48,5 +49,6 @@ export const Icons = {
   Sparkles,
   Boxes,
   CheckCircle2,
-  Facebook
+  Facebook,
+  Calendar
 };
