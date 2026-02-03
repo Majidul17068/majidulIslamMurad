@@ -68,7 +68,7 @@ export const Navbar: React.FC = () => {
             <img
               src="/logo.png"
               alt="Majid - AI Specialist"
-              className="h-14 sm:h-20 w-auto object-contain rounded-full shadow-md border border-slate-100"
+              className="h-14 sm:h-20 w-auto object-contain rounded-full shadow-lg border border-slate-100 bg-white p-1.5"
             />
           </a>
 
