@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
               </h1>
 
               <p className="text-lg sm:text-xl text-slate-600 font-light max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                I have hands on experience building scalable AI solutions, production pipelines and real-world Agentic AI solutions. I’m passionate about converting research into reliable products that users love.
+                I have hands-on experience building scalable AI solutions, production pipelines, and real-world Agentic AI solutions. I’m passionate about converting research into reliable products that users love.
               </p>
             </div>
 
@@ -46,7 +46,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Right Column: Profile Image + Code Panel */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end mb-12 md:mb-0">
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end mb-12 md:mb-0 relative">
             <div className="relative pt-0 md:pt-20 lg:pt-24">
               {/* Code Panel - positioned behind */}
               <div className="block transform scale-90 sm:scale-100 origin-center transition-transform duration-500">
