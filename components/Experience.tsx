@@ -1,15 +1,19 @@
 import React from 'react';
 import { EXPERIENCE } from '../constants';
+import { ScrollReveal } from './ui/ScrollReveal';
 
 export const Experience: React.FC = () => {
   return (
     <section id="experience" className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-slate-900 mb-16">Professional Experience</h2>
-        
+        <ScrollReveal>
+          <h2 className="text-3xl font-bold text-slate-900 mb-16">Professional Experience</h2>
+        </ScrollReveal>
+
         <div className="relative border-l-2 border-slate-200 ml-3 md:ml-6 space-y-16">
-          {EXPERIENCE.map((job) => (
-            <div key={job.id} className="relative pl-8 md:pl-12">
+          {EXPERIENCE.map((job, idx) => (
+            <ScrollReveal key={job.id} delay={idx * 100}>
+            <div className="relative pl-8 md:pl-12">
               {/* Timeline Dot */}
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-primary shadow-sm" />
               
@@ -33,6 +37,7 @@ export const Experience: React.FC = () => {
                 </div>
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

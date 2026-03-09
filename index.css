@@ -20,6 +20,16 @@
     scroll-behavior: smooth;
   }
 
+  /* Offset sections so the fixed navbar doesn't cover headings */
+  #about,
+  #expertise,
+  #projects,
+  #experience,
+  #research,
+  #contact {
+    scroll-margin-top: 80px;
+  }
+
   body {
     font-family: 'Inter', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;

@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Icons } from './ui/Icons';
 import { SOCIAL_LINKS } from '../constants';
 
+const navLinks = [
+  { name: 'About', href: '#about' },
+  { name: 'Expertise', href: '#expertise' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Research', href: '#research' },
+  { name: 'Contact', href: '#contact' },
+];
+
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,15 +58,6 @@ export const Navbar: React.FC = () => {
   const handleLinkClick = () => {
     setIsMenuOpen(false);
   };
-
-  const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Expertise', href: '#expertise' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
-    { name: 'Research', href: '#research' },
-    { name: 'Contact', href: '#contact' },
-  ];
 
   return (
     <>
@@ -205,6 +205,7 @@ export const Navbar: React.FC = () => {
                     href={SOCIAL_LINKS.github}
                     target="_blank"
                     rel="noreferrer"
+                    aria-label="GitHub Profile"
                     className="text-slate-500 hover:text-slate-900 transition-colors"
                   >
                     <Icons.Github size={20} />
@@ -213,9 +214,19 @@ export const Navbar: React.FC = () => {
                     href={SOCIAL_LINKS.linkedin}
                     target="_blank"
                     rel="noreferrer"
+                    aria-label="LinkedIn Profile"
                     className="text-slate-500 hover:text-blue-700 transition-colors"
                   >
                     <Icons.Linkedin size={20} />
+                  </a>
+                  <a
+                    href={SOCIAL_LINKS.facebook}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Facebook Profile"
+                    className="text-slate-500 hover:text-blue-600 transition-colors"
+                  >
+                    <Icons.Facebook size={20} />
                   </a>
                 </div>
               </div>

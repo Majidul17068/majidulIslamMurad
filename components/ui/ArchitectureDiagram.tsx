@@ -1,11 +1,12 @@
 import React from 'react';
+import type { LucideIcon } from 'lucide-react';
 import { Icons } from './Icons';
 
 interface Props {
   type: 'RAG' | 'EDGE_PIPELINE' | 'DATA_PIPELINE' | 'AGENTIC' | 'OCR_PIPELINE';
 }
 
-const Node = ({ label, icon: Icon, color }: { label: string; icon: any; color: string }) => (
+const Node = ({ label, icon: Icon, color }: { label: string; icon: LucideIcon; color: string }) => (
   <div className={`flex flex-col items-center justify-center p-3 rounded-lg border bg-white shadow-sm w-24 h-24 text-center z-10 ${color}`}>
     <Icon size={24} className="mb-2 opacity-80" />
     <span className="text-[10px] font-bold uppercase tracking-wider leading-tight">{label}</span>
