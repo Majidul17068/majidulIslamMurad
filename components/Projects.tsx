@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PROJECTS } from '../constants';
 import { Icons } from './ui/Icons';
 import { ArchitectureDiagram } from './ui/ArchitectureDiagram';
@@ -15,6 +15,14 @@ const PROJECT_TYPE_LABELS: Record<string, { label: string; color: string }> = {
 
 export const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedProject(null);
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, []);
 
   return (
     <section id="projects" className="py-20 sm:py-24">
@@ -60,7 +68,7 @@ export const Projects: React.FC = () => {
                       ) : (
                         <Icons.Github size={12} />
                       )}
-                      {project.buttonText || "Demo Github"}
+                      {project.buttonText || "View on GitHub"}
                     </a>
                   </div>
 
@@ -127,6 +135,9 @@ export const Projects: React.FC = () => {
         {/* Modal */}
         {selectedProject && (
           <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="modal-title"
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm animate-fade-in"
             onClick={() => setSelectedProject(null)}
           >
@@ -141,7 +152,7 @@ export const Projects: React.FC = () => {
                       {PROJECT_TYPE_LABELS[selectedProject.diagramType].label}
                     </span>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-slate-900">{selectedProject.title}</h3>
+                  <h3 id="modal-title" className="text-lg sm:text-xl font-bold text-slate-900">{selectedProject.title}</h3>
                 </div>
                 <button
                   onClick={() => setSelectedProject(null)}

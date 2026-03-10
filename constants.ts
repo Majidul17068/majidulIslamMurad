@@ -12,7 +12,7 @@ export const PROJECTS: Project[] = [
   {
     id: "1",
     title: "Care Home AI Solution EMPATHIKA",
-    problem: "Personalized monitoring and complete soutions for care home residents.",
+    problem: "Personalized monitoring and complete solutions for care home residents.",
     architectureHighlights: [
       "Multi-agent orchestration",
       "Personalized care plan generation",

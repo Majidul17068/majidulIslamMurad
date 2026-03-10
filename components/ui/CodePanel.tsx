@@ -72,16 +72,23 @@ export const CodePanel: React.FC = () => {
 
       useEffect(() => {
             let index = 0;
+            let cancelled = false;
+            let activeTimeout: ReturnType<typeof setTimeout>;
+
+            const schedule = (fn: () => void, delay: number) => {
+                  activeTimeout = setTimeout(() => { if (!cancelled) fn(); }, delay);
+            };
+
             const typeCode = () => {
                   if (index < CODE_CONTENT.length) {
                         setDisplayedCode(CODE_CONTENT.slice(0, index + 1));
                         index++;
                         const char = CODE_CONTENT[index - 1];
                         const delay = char === '\n' ? 120 : char === ' ' ? 25 : Math.random() * 35 + 20;
-                        setTimeout(typeCode, delay);
+                        schedule(typeCode, delay);
                   } else {
                         setIsTyping(false);
-                        setTimeout(() => {
+                        schedule(() => {
                               setDisplayedCode('');
                               index = 0;
                               setIsTyping(true);
@@ -90,8 +97,11 @@ export const CodePanel: React.FC = () => {
                   }
             };
 
-            const startDelay = setTimeout(typeCode, 600);
-            return () => clearTimeout(startDelay);
+            schedule(typeCode, 600);
+            return () => {
+                  cancelled = true;
+                  clearTimeout(activeTimeout);
+            };
       }, []);
 
       const renderCode = () => {

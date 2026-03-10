@@ -1,22 +1,26 @@
 import React from 'react';
 import { SKILLS } from '../constants';
 import { Icons } from './ui/Icons';
+import { ScrollReveal } from './ui/ScrollReveal';
 
 export const Expertise: React.FC = () => {
   return (
     <section id="expertise" className="py-24 bg-slate-50/50">
       <div className="container mx-auto px-6">
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Core Expertise</h2>
-          <div className="w-20 h-1 bg-primary rounded-full"></div>
-        </div>
+        <ScrollReveal>
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Core Expertise</h2>
+            <div className="w-20 h-1 bg-primary rounded-full"></div>
+          </div>
+        </ScrollReveal>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {SKILLS.map((category) => {
+          {SKILLS.map((category, idx) => {
             const IconComponent = Icons[category.icon as keyof typeof Icons] || Icons.Terminal;
 
             return (
-              <div key={category.title} className="group relative bg-white rounded-2xl transition-all duration-300 shadow-md hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)]">
+              <ScrollReveal key={category.title} delay={idx * 100}>
+              <div className="group relative bg-white rounded-2xl transition-all duration-300 shadow-md hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)]">
                 {/* Gradient Border Effect - Always on for mobile (subtle), stronger on hover */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-cyan-300 opacity-20 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm"></div>
 
@@ -39,6 +43,7 @@ export const Expertise: React.FC = () => {
                   </ul>
                 </div>
               </div>
+              </ScrollReveal>
             );
           })}
         </div>
