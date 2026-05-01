@@ -44,7 +44,7 @@ export const Projects: React.FC = () => {
             return (
               <div
                 key={project.id}
-                className="group relative bg-white rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] flex flex-col h-full"
+                className="group relative bg-white rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] flex flex-col h-[480px]"
               >
                 {/* Gradient Border Effect */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-cyan-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm"></div>
@@ -106,7 +106,7 @@ export const Projects: React.FC = () => {
                     </div>
                   </div>
 
-                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors line-clamp-2 min-h-[3.5rem]">
                     {project.title}
                   </h3>
                   <p className="text-sm text-slate-500 mb-5 line-clamp-2">

@@ -10,28 +10,33 @@ const SkillCard: React.FC<{ category: SkillCategory; ariaHidden?: boolean }> = (
   return (
     <div
       aria-hidden={ariaHidden}
-      className="group relative shrink-0 w-[280px] sm:w-[300px] bg-white rounded-2xl shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)]"
+      className="group relative shrink-0 w-[280px] sm:w-[300px] h-[380px] bg-white rounded-2xl shadow-md transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)]"
     >
       {/* Gradient Border Effect */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-cyan-300 opacity-20 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm pointer-events-none"></div>
 
-      <div className="h-full p-7 bg-white rounded-2xl border-2 border-slate-100 group-hover:border-primary/20 relative z-10 transition-all duration-300">
-        <div className="w-14 h-14 bg-primary/5 rounded-xl flex items-center justify-center mb-5 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-cyan-400 transition-all duration-300">
-          <IconComponent className="text-primary group-hover:text-white transition-colors duration-300" size={26} />
+      <div className="h-full p-7 bg-white rounded-2xl border-2 border-slate-100 group-hover:border-primary/20 relative z-10 transition-all duration-300 flex flex-col">
+        <div className="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center mb-4 group-hover:bg-gradient-to-br group-hover:from-primary group-hover:to-cyan-400 transition-all duration-300 shrink-0">
+          <IconComponent className="text-primary group-hover:text-white transition-colors duration-300" size={22} />
         </div>
 
-        <h3 className="text-lg font-bold text-slate-900 mb-4 group-hover:text-primary transition-colors">
+        <h3 className="text-base font-bold text-slate-900 mb-3 group-hover:text-primary transition-colors line-clamp-2">
           {category.title}
         </h3>
 
-        <ul className="space-y-2.5">
-          {category.skills.map((skill) => (
-            <li key={skill} className="flex items-start gap-2.5 text-sm font-medium text-slate-600">
-              <Icons.CheckCircle2 className="w-4 h-4 mt-0.5 text-primary/60 shrink-0" />
-              <span className="leading-snug">{skill}</span>
+        <ul className="space-y-2 flex-1">
+          {category.skills.slice(0, 6).map((skill) => (
+            <li key={skill} className="flex items-start gap-2 text-sm font-medium text-slate-600">
+              <Icons.CheckCircle2 className="w-3.5 h-3.5 mt-0.5 text-primary/60 shrink-0" />
+              <span className="leading-snug line-clamp-1">{skill}</span>
             </li>
           ))}
         </ul>
+        {category.skills.length > 6 && (
+          <p className="text-xs text-slate-400 mt-2 pt-2 border-t border-slate-100">
+            +{category.skills.length - 6} more
+          </p>
+        )}
       </div>
     </div>
   );
