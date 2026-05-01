@@ -6,10 +6,10 @@ export const Hero: React.FC = () => {
   return (
     <section id="about" className="relative min-h-screen flex items-center pt-20 pb-12 sm:pt-24 sm:pb-16 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-center">
 
           {/* Left Column: Content */}
-          <div className="order-2 lg:order-1 space-y-6 animate-fade-in-up text-center lg:text-left">
+          <div className="order-2 md:order-1 space-y-6 animate-fade-in-up text-center md:text-left">
             <div className="space-y-4">
               {/* <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-mono font-medium tracking-wide">
                 <span className="relative flex h-2 w-2">
@@ -18,17 +18,17 @@ export const Hero: React.FC = () => {
                 </span>
                 AVAILABLE FOR OPPORTUNITIES
               </div> */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
-                <span className="text-slate-900 block mb-2">Hi, I'm Majid</span>
-                <span className="bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent block">AI/ML Engineer</span>
+              <h1 className="font-bold tracking-tight leading-[1.1]">
+                <span className="block text-3xl sm:text-4xl md:text-5xl text-slate-900 mb-1">Hi, I'm Majid</span>
+                <span className="block text-xl sm:text-2xl md:text-3xl lg:text-4xl bg-gradient-to-r from-teal-500 to-cyan-500 bg-clip-text text-transparent">AI/ML Engineer & Architect</span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-slate-600 font-light max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                I have hands-on experience building scalable AI solutions, production pipelines, and real-world Agentic AI solutions. I’m passionate about converting research into reliable products that users love.
+              <p className="text-base sm:text-lg lg:text-xl text-slate-600 font-light max-w-lg mx-auto md:mx-0 leading-relaxed">
+                AI/ML engineer and architect with <span className="font-medium text-slate-800">end-to-end ownership</span> of production LLM, RAG and multi-agent systems. Three live platforms shipped, author of <span className="font-medium text-slate-800">personakit</span> on PyPI.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3">
+            <div className="flex flex-col sm:flex-row justify-center md:justify-start gap-3">
               <a
                 href="#projects"
                 className="inline-flex items-center justify-center gap-2 bg-slate-900 text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-800 transition-colors"
@@ -46,7 +46,7 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* Right Column: Profile Image + Code Panel */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end mb-12 md:mb-0 relative">
+          <div className="order-1 md:order-2 flex justify-center md:justify-end mb-8 md:mb-0 relative">
             <div className="relative pt-0 md:pt-20 lg:pt-24">
               {/* Code Panel - positioned behind */}
               <div className="block transform scale-90 sm:scale-100 origin-center transition-transform duration-500">

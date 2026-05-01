@@ -51,25 +51,59 @@ export const Projects: React.FC = () => {
 
                 {/* Main Card Content */}
                 <div className="flex-1 flex flex-col p-6 sm:p-8 bg-white rounded-2xl border-2 border-slate-200 group-hover:border-primary/20 relative z-10 transition-all duration-300">
-                  {/* Project Type Badge - Key for recruiter scanning */}
-                  <div className="flex items-center justify-between mb-4">
-                    <span className={`px-2.5 py-1 text-xs font-semibold rounded-full border ${typeInfo.color}`}>
-                      {typeInfo.label}
-                    </span>
-                    <a
-                      href={project.githubUrl || '#'}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 px-3 py-1 bg-slate-50 border border-slate-200 rounded-lg text-xs font-medium text-slate-600 hover:text-primary hover:border-primary/50 hover:bg-white hover:shadow-sm transition-all z-20"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      {project.buttonText === "Ask for Demo" ? (
-                        <Icons.Mail size={12} />
-                      ) : (
-                        <Icons.Github size={12} />
+                  {/* Project Type Badge + Status + Action link */}
+                  <div className="flex items-center justify-between gap-2 mb-4 flex-wrap">
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      <span className={`px-2.5 py-1 text-xs font-semibold rounded-full border ${typeInfo.color}`}>
+                        {project.customBadge || typeInfo.label}
+                      </span>
+                      {project.status === 'live' && (
+                        <span className="inline-flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-full bg-emerald-100 text-emerald-700 border border-emerald-200">
+                          <span className="relative flex h-1.5 w-1.5">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                          </span>
+                          Live
+                        </span>
                       )}
-                      {project.buttonText || "View on GitHub"}
-                    </a>
+                      {project.status === 'oss' && (
+                        <span className="inline-flex items-center gap-1 px-2 py-1 text-[10px] font-semibold rounded-full bg-violet-100 text-violet-700 border border-violet-200">
+                          <Icons.Github size={10} />
+                          Open Source
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      {project.pypiUrl && (
+                        <a
+                          href={project.pypiUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1.5 px-3 py-1 bg-amber-50 border border-amber-200 rounded-lg text-xs font-medium text-amber-700 hover:bg-amber-100 hover:border-amber-300 transition-all z-20"
+                          onClick={(e) => e.stopPropagation()}
+                          title="PyPI package"
+                        >
+                          <Icons.Package size={12} />
+                          PyPI
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1.5 px-3 py-1 bg-slate-50 border border-slate-200 rounded-lg text-xs font-medium text-slate-600 hover:text-primary hover:border-primary/50 hover:bg-white hover:shadow-sm transition-all z-20"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {project.buttonText === "Ask for Demo" ? (
+                            <Icons.Mail size={12} />
+                          ) : (
+                            <Icons.Github size={12} />
+                          )}
+                          {project.buttonText || "View on GitHub"}
+                        </a>
+                      )}
+                    </div>
                   </div>
 
                   <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2 group-hover:text-primary transition-colors">
@@ -106,7 +140,7 @@ export const Projects: React.FC = () => {
                     ))}
                   </div>
 
-                  {/* Conditional Button: Book Demo OR View Architecture */}
+                  {/* Conditional Button: Book Demo OR View Architecture (or nothing) */}
                   {project.bookDemoUrl ? (
                     <a
                       href={project.bookDemoUrl}
@@ -117,7 +151,7 @@ export const Projects: React.FC = () => {
                     >
                       <Icons.Calendar size={16} /> Book Demo
                     </a>
-                  ) : (
+                  ) : project.hideArchitecture ? null : (
                     <button
                       onClick={() => setSelectedProject(project)}
                       className="w-full mt-auto flex items-center justify-center gap-2 bg-slate-900 text-white py-3 rounded-lg text-sm font-medium hover:bg-primary transition-colors group-hover:shadow-lg group-hover:shadow-primary/25"
@@ -149,7 +183,7 @@ export const Projects: React.FC = () => {
                 <div>
                   <div className="flex items-center gap-2 mb-1">
                     <span className={`px-2 py-0.5 text-xs font-semibold rounded-full border ${PROJECT_TYPE_LABELS[selectedProject.diagramType].color}`}>
-                      {PROJECT_TYPE_LABELS[selectedProject.diagramType].label}
+                      {selectedProject.customBadge || PROJECT_TYPE_LABELS[selectedProject.diagramType].label}
                     </span>
                   </div>
                   <h3 id="modal-title" className="text-lg sm:text-xl font-bold text-slate-900">{selectedProject.title}</h3>

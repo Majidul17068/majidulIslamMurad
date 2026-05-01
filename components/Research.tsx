@@ -124,7 +124,16 @@ export const Research: React.FC = () => {
                         <Icons.Award size={20} className={`${color.iconColor}`} />
                       </div>
                     </div>
-                    <h3 className={`font-bold text-sm text-slate-900 leading-snug mb-3 min-h-[40px] ${color.hoverText} transition-colors`}>{cert.title}</h3>
+                    <h3 className={`font-bold text-sm text-slate-900 leading-snug mb-3 min-h-[40px] ${color.hoverText} transition-colors`}>
+                      {cert.url ? (
+                        <a href={cert.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-start gap-1 hover:underline">
+                          {cert.title}
+                          <Icons.ExternalLink size={12} className="mt-1 shrink-0 opacity-60" />
+                        </a>
+                      ) : (
+                        cert.title
+                      )}
+                    </h3>
                     <div className="flex justify-between items-end">
                       <span className="text-xs text-slate-500">{cert.issuer}</span>
                       <span className={`text-xs font-mono font-bold px-2 py-1 rounded ${color.badge}`}>{cert.year}</span>

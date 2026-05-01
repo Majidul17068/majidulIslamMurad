@@ -7,14 +7,31 @@ const navLinks = [
   { name: 'Expertise', href: '#expertise' },
   { name: 'Projects', href: '#projects' },
   { name: 'Experience', href: '#experience' },
+  { name: 'Mentorship', href: '#mentorship' },
   { name: 'Research', href: '#research' },
   { name: 'Contact', href: '#contact' },
 ];
+
+type Theme = 'light' | 'dark';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('about');
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === 'undefined') return 'light';
+    const stored = window.localStorage.getItem('theme');
+    return stored === 'dark' ? 'dark' : 'light';
+  });
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark-theme', theme === 'dark');
+    try {
+      window.localStorage.setItem('theme', theme);
+    } catch { /* ignore quota errors */ }
+  }, [theme]);
+
+  const toggleTheme = () => setTheme((t) => (t === 'light' ? 'dark' : 'light'));
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,14 +78,14 @@ export const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-2' : 'bg-white/80 backdrop-blur-sm py-3'}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-1.5' : 'bg-white/80 backdrop-blur-sm py-2'}`}>
         <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
           {/* Logo Area - Properly constrained */}
           <a href="#" className="flex items-center gap-2 group shrink-0">
             <img
               src="/logo.png"
               alt="Majid - AI Specialist"
-              className="h-14 sm:h-20 w-auto object-contain"
+              className="h-9 sm:h-11 w-auto object-contain"
             />
           </a>
 
@@ -108,13 +125,13 @@ export const Navbar: React.FC = () => {
               <Icons.Phone size={18} />
             </a>
 
-            <div className="w-px h-4 bg-slate-200 hidden sm:block mx-1"></div>
+            <div className="w-px h-4 bg-slate-200 hidden lg:block mx-1"></div>
 
             <a
               href={SOCIAL_LINKS.github}
               target="_blank"
               rel="noreferrer"
-              className="hidden sm:flex text-slate-500 hover:text-slate-900 transition-colors p-1"
+              className="hidden lg:flex text-slate-500 hover:text-slate-900 transition-colors p-1"
               aria-label="GitHub Profile"
             >
               <Icons.Github size={18} />
@@ -123,7 +140,7 @@ export const Navbar: React.FC = () => {
               href={SOCIAL_LINKS.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="hidden sm:flex text-slate-500 hover:text-blue-700 transition-colors p-1"
+              className="hidden lg:flex text-slate-500 hover:text-blue-700 transition-colors p-1"
               aria-label="LinkedIn Profile"
             >
               <Icons.Linkedin size={18} />
@@ -132,11 +149,23 @@ export const Navbar: React.FC = () => {
               href={SOCIAL_LINKS.facebook}
               target="_blank"
               rel="noreferrer"
-              className="hidden sm:flex text-slate-500 hover:text-blue-600 transition-colors p-1"
+              className="hidden lg:flex text-slate-500 hover:text-blue-600 transition-colors p-1"
               aria-label="Facebook Profile"
             >
               <Icons.Facebook size={18} />
             </a>
+
+            <div className="w-px h-4 bg-slate-200 hidden sm:block mx-1"></div>
+
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
+              title={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
+              className="flex items-center justify-center w-8 h-8 rounded-lg bg-slate-900 text-amber-300 hover:bg-slate-800 transition-colors shadow-sm"
+            >
+              {theme === 'light' ? <Icons.Moon size={15} /> : <Icons.Sun size={15} />}
+            </button>
 
             {/* Mobile Menu Toggle */}
             <button

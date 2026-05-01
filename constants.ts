@@ -1,4 +1,4 @@
-import { Project, Experience, SkillCategory, ResearchItem, Certification } from './types';
+import { Project, Experience, SkillCategory, ResearchItem, Certification, Mentorship } from './types';
 
 export const SOCIAL_LINKS = {
   email: "contact.majidul.islam@gmail.com",
@@ -10,9 +10,26 @@ export const SOCIAL_LINKS = {
 
 export const PROJECTS: Project[] = [
   {
+    id: "personakit",
+    title: "personakit — Declarative LLM Agent Builder",
+    problem: "Building production-quality LLM agents usually means hand-wired chains, ad-hoc evaluation and provider-specific glue. personakit replaces all of that with a single declarative data object — persona, frameworks, probes, red flags and themes as data, not code.",
+    architectureHighlights: [
+      "Persona, frameworks, probes and red flags as a single data object",
+      "Cross-provider runtime — OpenAI, Anthropic, plus 100+ providers via LiteLLM",
+      "Streaming, OpenTelemetry hooks, token cost tracking, multi-turn tool loop",
+      "Red flags as a first-class primitive: regex AND semantic LLM matching for audit-grade output"
+    ],
+    techStack: ["Python", "OpenAI", "Anthropic", "LiteLLM", "OpenTelemetry", "Pytest"],
+    diagramType: "AGENTIC",
+    githubUrl: "https://github.com/Majidul17068/personakit",
+    pypiUrl: "https://pypi.org/project/personakit/",
+    status: "oss",
+    buttonText: "View on GitHub"
+  },
+  {
     id: "1",
-    title: "Care Home AI Solution EMPATHIKA",
-    problem: "Personalized monitoring and complete solutions for care home residents.",
+    title: "EMPATHIKA — Healthcare AI Platform",
+    problem: "Personalized monitoring, care planning and medication safety for healthcare and clinical research — combining internal records with external medical knowledge for grounded, citation-backed responses.",
     architectureHighlights: [
       "Multi-agent orchestration",
       "Personalized care plan generation",
@@ -21,9 +38,41 @@ export const PROJECTS: Project[] = [
     ],
     techStack: ["Multi-Agent", "LangFuse", "FastAPI", "In-house LLMs", "Vector DB"],
     diagramType: "AGENTIC",
-    githubUrl: "mailto:contact.majidul.islam@gmail.com?subject=Demo Request: Care Home AI Solution EMPATHIKA",
+    customBadge: "Agentic AI · Multi-Agent · RAG",
+    status: "live",
+    hideArchitecture: true
+  },
+  {
+    id: "bank-reconciliation",
+    title: "AI Bank Reconciliation",
+    problem: "Manual matching of bank statements with internal financial records is slow, error-prone and doesn't scale for large enterprises. AI Bank Reconciliation automates the entire match-and-flag workflow.",
+    architectureHighlights: [
+      "Automated statement vs ledger matching",
+      "Anomaly flagging and exception routing",
+      "Accelerates monthly close, reduces manual review",
+      "Scales reconciliation across enterprise volumes"
+    ],
+    techStack: ["Python", "FastAPI", "ML", "Automation"],
+    diagramType: "DATA_PIPELINE",
+    status: "live",
+    githubUrl: "mailto:contact.majidul.islam@gmail.com?subject=Demo Request: AI Bank Reconciliation",
     buttonText: "Ask for Demo",
-    bookDemoUrl: "https://tulip-tech.com/"
+    bookDemoUrl: "mailto:contact.majidul.islam@gmail.com?subject=Book Demo: AI Bank Reconciliation"
+  },
+  {
+    id: "3",
+    title: "Agentic RAG — HR Policy Chatbot",
+    problem: "Complex policy retrieval and comprehension for Kazi Farms Group employees — natural-language access to internal HR & policy documents with full source attribution.",
+    architectureHighlights: [
+      "Retrieval-Augmented Generation (RAG) pipeline",
+      "DeepSeek models & ChromaDB vector store",
+      "Multi-lingual support (English/Bangla)",
+      "Source attribution engine"
+    ],
+    techStack: ["LangChain", "DeepSeek", "ChromaDB", "Python"],
+    diagramType: "RAG",
+    status: "live",
+    githubUrl: "https://github.com/Majidul17068/KFG-HR-Bot"
   },
   {
     id: "2",
@@ -38,21 +87,7 @@ export const PROJECTS: Project[] = [
     techStack: ["Tesseract", "OpenCV", "Python", "FastAPI", "Deep Learning"],
     diagramType: "OCR_PIPELINE",
     githubUrl: "https://github.com/Majidul17068/care-data-migration",
-    bookDemoUrl: "https://tulip-tech.com/"
-  },
-  {
-    id: "3",
-    title: "Agentic RAG – HR Policy Chatbot",
-    problem: "Complex policy retrieval and comprehension for Kazi Farms Group employees.",
-    architectureHighlights: [
-      "Retrieval-Augmented Generation (RAG) pipeline",
-      "DeepSeek models & ChromaDB vector store",
-      "Multi-lingual support (English/Bangla)",
-      "Source attribution engine"
-    ],
-    techStack: ["LangChain", "DeepSeek", "ChromaDB", "Python"],
-    diagramType: "RAG",
-    githubUrl: "https://github.com/Majidul17068/KFG-HR-Bot"
+    bookDemoUrl: "mailto:contact.majidul.islam@gmail.com?subject=Book Demo: Medical Document OCR"
   },
   {
     id: "4",
@@ -156,24 +191,59 @@ export const EXPERIENCE: Experience[] = [
 
 export const SKILLS: SkillCategory[] = [
   {
-    title: "Edge AI & GPU Systems",
-    icon: "Cpu",
-    skills: ["NVIDIA Jetson", "CUDA / TensorRT", "FP16 / INT8 Opt.", "Real-time Inference"]
-  },
-  {
-    title: "LLM Systems & RAG",
+    title: "ML & Deep Learning",
     icon: "Brain",
-    skills: ["Transformers", "LangChain / LlamaIndex", "ChromaDB / Pinecone", "Prompt Engineering"]
+    skills: ["PyTorch", "TensorFlow", "Keras", "Scikit-Learn", "Hugging Face Transformers", "NumPy", "Pandas", "Matplotlib", "Seaborn", "Time Series Forecasting"]
   },
   {
-    title: "Agentic AI",
+    title: "LLMs & NLP",
+    icon: "Sparkles",
+    skills: ["OpenAI", "Anthropic", "DeepSeek", "Groq", "Ollama", "LLaMA Models", "LiteLLM", "Prompt Engineering", "Fine-tuning", "Streaming", "Token Cost Tracking"]
+  },
+  {
+    title: "Agents & Multi-Agent",
     icon: "Bot",
-    skills: ["CrewAI", "LangGraph", "Multi-agent Systems", "Autonomous Reasoning"]
+    skills: ["LangChain", "LlamaIndex", "CrewAI", "LangGraph", "AutoGen", "Tool Calling", "Multi-Agent Orchestration", "Conversational Sessions", "personakit (OSS)"]
   },
   {
-    title: "ML Infrastructure",
+    title: "Retrieval & Vectors",
+    icon: "Database",
+    skills: ["RAG", "Agentic RAG", "ChromaDB", "Pinecone", "Embedding Models", "Semantic Search", "Source Attribution"]
+  },
+  {
+    title: "Vision & Document AI",
+    icon: "Layers",
+    skills: ["Tesseract", "OpenCV", "OCR Pipelines", "Multimodal Understanding", "Document Parsing", "Deep Learning"]
+  },
+  {
+    title: "Edge AI & GPU",
+    icon: "Cpu",
+    skills: ["NVIDIA Jetson", "CUDA", "TensorRT", "ONNX Runtime", "FP16 / INT8 Quantization", "Real-time Inference"]
+  },
+  {
+    title: "Backend & APIs",
     icon: "Server",
-    skills: ["FastAPI / Streamlit", "MLflow / Docker", "AWS / Azure / GCP", "CI/CD Pipelines"]
+    skills: ["FastAPI", "Streamlit", "REST APIs", "MongoDB", "PySpark", "Big Data"]
+  },
+  {
+    title: "MLOps & Observability",
+    icon: "Boxes",
+    skills: ["MLflow", "Phoenix", "Langfuse", "OpenTelemetry", "Docker", "Model Versioning", "Hallucination Analysis"]
+  },
+  {
+    title: "Cloud Platforms",
+    icon: "Network",
+    skills: ["Azure", "AWS", "GCP", "Azure Cognitive Services"]
+  },
+  {
+    title: "CI/CD & Testing",
+    icon: "Terminal",
+    skills: ["GitHub Actions", "Jenkins", "Pytest", "mypy --strict", "Trusted Publishing", "Git"]
+  },
+  {
+    title: "Automation & PM",
+    icon: "Calendar",
+    skills: ["N8N", "Make.com", "Zapier", "monday.com", "Jira", "Agile / PMI"]
   }
 ];
 
@@ -187,8 +257,24 @@ export const RESEARCH: ResearchItem[] = [
 ];
 
 export const CERTIFICATIONS: Certification[] = [
+  { title: "PMI Member", issuer: "Project Management Institute (PMI)", year: "2026", url: "/pmi-certificate.pdf" },
   { title: "Oracle Certified Foundation Associate", issuer: "Oracle University", year: "2025" },
   { title: "Agile Project Management Practitioner", issuer: "HP LIFE", year: "2024" },
+  { title: "Industrial Data Science and Machine Learning with AI", issuer: "HR Ventures", year: "2023" },
   { title: "Admin Official Certification", issuer: "monday.com", year: "2023" },
   { title: "Cybersecurity (Ethical Hacking)", issuer: "Arena Web Security", year: "2022" }
 ];
+
+export const MENTORSHIP: Mentorship = {
+  role: "Mentor",
+  organization: "AI/ML Professional Community",
+  url: "https://www.linkedin.com/groups/14270358/",
+  description: "Active mentor in the AI/ML practitioner community on LinkedIn — guiding peers on production LLM systems, RAG, multi-agent architectures, MLOps, and AI career growth.",
+  highlights: [
+    "Production LLM systems & evaluation",
+    "RAG, vector stores and retrieval design",
+    "Multi-agent architectures (CrewAI, LangGraph)",
+    "MLOps, observability and AI career growth"
+  ],
+  photos: ["/mentor-1.jpg", "/mentor-2.jpg"]
+};

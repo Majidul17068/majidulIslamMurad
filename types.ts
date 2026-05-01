@@ -8,6 +8,10 @@ export interface Project {
   githubUrl?: string;
   buttonText?: string;
   bookDemoUrl?: string;
+  pypiUrl?: string;
+  status?: 'live' | 'oss';
+  hideArchitecture?: boolean;
+  customBadge?: string;
 }
 
 export interface Experience {
@@ -36,4 +40,14 @@ export interface Certification {
   title: string;
   issuer: string;
   year: string;
+  url?: string;
+}
+
+export interface Mentorship {
+  role: string;
+  organization: string;
+  url: string;
+  description: string;
+  highlights: string[];
+  photos: string[];
 }
