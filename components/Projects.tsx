@@ -44,7 +44,7 @@ export const Projects: React.FC = () => {
             return (
               <div
                 key={project.id}
-                className="group relative bg-white rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] flex flex-col h-[480px]"
+                className="group relative bg-white rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] flex flex-col h-[560px] overflow-hidden"
               >
                 {/* Gradient Border Effect */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-cyan-300 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10 blur-sm"></div>
