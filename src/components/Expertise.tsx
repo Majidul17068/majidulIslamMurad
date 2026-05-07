@@ -1,0 +1,53 @@
+import { motion } from "motion/react";
+import { PORTFOLIO_DATA } from "../data/portfolioData";
+import { forwardRef } from "react";
+
+export const Expertise = forwardRef<HTMLElement>((props, ref) => {
+  return (
+    <section ref={ref} className="h-full bg-[#0F0F0F] border border-[#222] rounded-3xl p-6 lg:p-8 flex flex-col">
+      <h2 className="text-sm font-mono text-[#666] uppercase mb-6 tracking-widest">Core Architecture</h2>
+
+      <div className="flex flex-col gap-3">
+        {PORTFOLIO_DATA.expertise.slice(0, 4).map((item, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+            className="flex justify-between items-center border-b border-[#222] pb-3 last:border-0"
+          >
+            <span className="text-sm font-medium text-[#EDEDED]">{item.title}</span>
+            <span className="text-[10px] text-[#00FF41] font-mono border border-[#00FF41]/30 bg-[#00FF41]/10 px-2 py-0.5 rounded">PRO</span>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="mt-8 pt-8 border-t border-[#222]">
+        <h3 className="text-[11px] font-mono text-[#666] mb-5 uppercase tracking-widest">Education</h3>
+        <div className="space-y-5">
+          {PORTFOLIO_DATA.education.map((edu, index) => {
+            const isHighest = index === 0;
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 8 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08, duration: 0.5 }}
+                className="relative pl-5 border-l-2 border-[#222]"
+              >
+                <div className={`absolute -left-[5px] top-1 w-2 h-2 rounded-full ${isHighest ? "bg-[#00FF41]" : "bg-[#555]"}`} />
+                <h4 className="text-xs font-semibold text-[#EDEDED] leading-snug mb-1.5">{edu.degree}</h4>
+                <div className="flex items-baseline gap-3 flex-wrap">
+                  <span className="text-[11px] text-[#00FF41] font-mono">{edu.grade}</span>
+                  <span className="text-[10px] text-[#666] font-mono uppercase tracking-widest">{edu.duration}</span>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+});
