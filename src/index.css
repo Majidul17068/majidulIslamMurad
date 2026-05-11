@@ -71,23 +71,40 @@ html.theme-gemini body {
   background-attachment: fixed;
 }
 
-/* Panel cards: in Matrix mode they're flat #0F0F0F (black). In Gemini
-   mode that reads as black holes against the purple aurora, so we tint
-   them with a subtle purple gradient and a faint accent border. */
+/* Section panel cards (Hero, About, Featured Work, etc.): in Matrix
+   mode they're flat #0F0F0F (black). In Gemini mode that reads as
+   black holes against the purple aurora, so we tint them with a
+   subtle purple gradient and a faint accent border. */
 html.theme-gemini section[class*="bg-[#0F0F0F]"] {
   background: linear-gradient(135deg, rgba(45, 18, 78, 0.95) 0%, rgba(15, 10, 32, 0.95) 100%) !important;
   border-color: rgba(137, 49, 249, 0.20) !important;
 }
 
-/* Nested panels inside the Hero / Featured Work / Leadership cards
-   also use the same flat bg — tint them too but a notch darker so
-   the visual hierarchy (outer panel > inner card) is preserved. */
-html.theme-gemini [class*="bg-[#111]"]:not(section),
-html.theme-gemini [class*="bg-[#1A1A1A]"]:not(section) {
+/* Navbar (header element) uses bg-[#0F0F0F]/90 — keep some
+   translucency so the aurora shows through behind the pill. */
+html.theme-gemini header[class*="bg-[#0F0F0F]"] {
+  background: rgba(30, 15, 65, 0.85) !important;
+  border-color: rgba(137, 49, 249, 0.25) !important;
+}
+
+/* Featured Work project cards use a different gradient
+   (bg-gradient-to-br from-[#111] to-[#0A0A0A]). Target them via the
+   `from-[#111]` class fragment and replace with a purple gradient. */
+html.theme-gemini [class*="from-[#111]"] {
+  background: linear-gradient(135deg, rgba(50, 22, 88, 0.92) 0%, rgba(18, 11, 36, 0.95) 100%) !important;
+  border-color: rgba(137, 49, 249, 0.22) !important;
+}
+
+/* Nested elements inside cards (Problem/Solution boxes, skill chips,
+   icon containers) use #111, #1A1A1A, #161616. Tint slightly darker
+   than the parent so the hierarchy (outer panel > inner block) stays. */
+html.theme-gemini [class*="bg-[#111]"]:not(section):not([class*="from-"]),
+html.theme-gemini [class*="bg-[#1A1A1A]"]:not(section),
+html.theme-gemini [class*="bg-[#161616]"]:not(section) {
   background-color: rgba(20, 12, 40, 0.9) !important;
 }
 
-/* Card borders */
+/* Outer card borders */
 html.theme-gemini section[class*="border-[#222]"] {
   border-color: rgba(137, 49, 249, 0.20) !important;
 }
