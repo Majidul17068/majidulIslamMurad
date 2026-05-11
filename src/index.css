@@ -24,19 +24,19 @@
 }
 
 html.theme-gemini {
-  /* Gemini palette: Google blue → purple → coral pink */
-  --accent: #9B72CB;            /* mid purple — best as a single accent */
-  --accent-strong: #4285F4;     /* start blue */
-  --accent-mid: #D96570;        /* end coral */
-  --accent-5: rgba(155, 114, 203, 0.05);
-  --accent-10: rgba(155, 114, 203, 0.1);
-  --accent-20: rgba(155, 114, 203, 0.2);
-  --accent-30: rgba(155, 114, 203, 0.3);
-  --accent-50: rgba(155, 114, 203, 0.5);
-  --accent-60: rgba(155, 114, 203, 0.6);
-  --accent-70: rgba(155, 114, 203, 0.7);
-  --accent-75: rgba(155, 114, 203, 0.75);
-  --accent-panel-bg: linear-gradient(135deg, #4285F4 0%, #9B72CB 50%, #D96570 100%);
+  /* Sampled directly from /ai-logo.png pentagon: magenta → purple → blue */
+  --accent: #8931F9;            /* logo upper-left purple — primary accent */
+  --accent-strong: #2958FB;     /* logo bottom blue */
+  --accent-mid: #CE15F1;        /* logo top magenta */
+  --accent-5: rgba(137, 49, 249, 0.05);
+  --accent-10: rgba(137, 49, 249, 0.1);
+  --accent-20: rgba(137, 49, 249, 0.2);
+  --accent-30: rgba(137, 49, 249, 0.3);
+  --accent-50: rgba(137, 49, 249, 0.5);
+  --accent-60: rgba(137, 49, 249, 0.6);
+  --accent-70: rgba(137, 49, 249, 0.7);
+  --accent-75: rgba(137, 49, 249, 0.75);
+  --accent-panel-bg: linear-gradient(135deg, #CE15F1 0%, #8931F9 50%, #2958FB 100%);
   --accent-panel-fg: #ffffff;
 }
 
@@ -74,7 +74,7 @@ html.theme-gemini {
     color: var(--accent);
   }
   html.theme-gemini .accent-text {
-    background: linear-gradient(90deg, #4285F4, #9B72CB, #D96570);
+    background: linear-gradient(90deg, #CE15F1, #8931F9, #2958FB);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -85,6 +85,6 @@ html.theme-gemini {
     background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   }
   html.theme-gemini .accent-brand {
-    background: linear-gradient(135deg, #4285F4, #9B72CB, #D96570);
+    background: linear-gradient(135deg, #CE15F1, #8931F9, #2958FB);
   }
 }

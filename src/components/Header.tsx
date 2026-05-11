@@ -52,16 +52,15 @@ export function Header() {
             onClick={toggleTheme}
             aria-label={theme === "matrix" ? "Switch to Gemini AI theme" : "Switch to Matrix theme"}
             title={theme === "matrix" ? "Switch to Gemini AI theme" : "Switch to Matrix theme"}
-            className="relative flex items-center justify-center w-9 h-9 rounded-lg hover:scale-110 active:scale-95 transition-transform"
+            className={`relative flex items-center justify-center w-6 h-6 rounded-md transition-all hover:scale-110 active:scale-95 ${
+              theme === "gemini" ? "ring-1 ring-[var(--accent-50)] ring-offset-2 ring-offset-[#0F0F0F]" : ""
+            }`}
           >
             <img
               src="/ai-logo.png"
               alt="Theme toggle"
               className="w-full h-full object-contain"
             />
-            {theme === "gemini" && (
-              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-white/80" aria-hidden />
-            )}
           </button>
 
           <a
