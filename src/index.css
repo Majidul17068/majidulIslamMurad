@@ -50,23 +50,25 @@ html.theme-gemini {
   }
 }
 
-/* Gemini theme: replace the flat black surroundings with a multi-stop
-   ambient gradient (logo's magenta / purple / blue). Applied directly
-   to the .app-shell wrapper so it overrides the hardcoded Tailwind
-   utility class and stays full-height/full-bleed. */
+/* Gemini theme: strong purple→blue diagonal base + radial accent blobs
+   (logo's magenta / purple / blue). Linear gradient gives the page a
+   clearly colored bg everywhere; radials add depth at the corners. */
 html.theme-gemini .app-shell {
-  background-color: #0A0220 !important;
-  background-image:
-    radial-gradient(ellipse 65% 50% at 5% 5%, rgba(206, 21, 241, 0.38), transparent 65%),
-    radial-gradient(ellipse 60% 55% at 95% 95%, rgba(41, 88, 251, 0.32), transparent 65%),
-    radial-gradient(ellipse 50% 35% at 50% 45%, rgba(137, 49, 249, 0.18), transparent 75%);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background:
+    radial-gradient(ellipse 85% 60% at 0% 0%, rgba(206, 21, 241, 0.55), transparent 65%),
+    radial-gradient(ellipse 85% 65% at 100% 100%, rgba(41, 88, 251, 0.50), transparent 65%),
+    radial-gradient(ellipse 60% 40% at 50% 50%, rgba(137, 49, 249, 0.25), transparent 75%),
+    linear-gradient(135deg, #2A0A4D 0%, #160F3A 45%, #07112B 100%)
+    !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
 }
 
-/* Also tint the body underneath in case the wrapper doesn't stretch */
+/* Body underneath the wrapper picks up the linear gradient too, so
+   any edge of the page that the wrapper doesn't cover stays themed. */
 html.theme-gemini body {
-  background-color: #060114;
+  background: linear-gradient(135deg, #2A0A4D 0%, #160F3A 45%, #07112B 100%);
+  background-attachment: fixed;
 }
 
 @layer utilities {
