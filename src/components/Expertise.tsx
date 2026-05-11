@@ -18,7 +18,7 @@ export const Expertise = forwardRef<HTMLElement>((props, ref) => {
             className="flex justify-between items-center border-b border-[#222] pb-3 last:border-0"
           >
             <span className="text-sm font-medium text-[#EDEDED]">{item.title}</span>
-            <span className="text-[10px] text-[#00FF41] font-mono border border-[#00FF41]/30 bg-[#00FF41]/10 px-2 py-0.5 rounded">PRO</span>
+            <span className="text-[10px] text-[var(--accent)] font-mono border border-[var(--accent-30)] bg-[var(--accent-10)] px-2 py-0.5 rounded">PRO</span>
           </motion.div>
         ))}
       </div>
@@ -37,10 +37,10 @@ export const Expertise = forwardRef<HTMLElement>((props, ref) => {
                 transition={{ delay: index * 0.08, duration: 0.5 }}
                 className="relative pl-5 border-l-2 border-[#222]"
               >
-                <div className={`absolute -left-[5px] top-1 w-2 h-2 rounded-full ${isHighest ? "bg-[#00FF41]" : "bg-[#555]"}`} />
+                <div className={`absolute -left-[5px] top-1 w-2 h-2 rounded-full ${isHighest ? "bg-[var(--accent)]" : "bg-[#555]"}`} />
                 <h4 className="text-xs font-semibold text-[#EDEDED] leading-snug mb-1.5">{edu.degree}</h4>
                 <div className="flex items-baseline gap-3 flex-wrap">
-                  <span className="text-[11px] text-[#00FF41] font-mono">{edu.grade}</span>
+                  <span className="text-[11px] text-[var(--accent)] font-mono">{edu.grade}</span>
                   <span className="text-[10px] text-[#666] font-mono uppercase tracking-widest">{edu.duration}</span>
                 </div>
               </motion.div>

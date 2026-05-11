@@ -19,7 +19,7 @@ export const Experience = forwardRef<HTMLElement>((props, ref) => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative pl-5 border-l border-[#333]"
             >
-              <div className={`absolute -left-[5px] top-0.5 w-2 h-2 rounded-full ${isCurrent ? 'bg-[#00FF41]' : 'bg-[#666]'}`} />
+              <div className={`absolute -left-[5px] top-0.5 w-2 h-2 rounded-full ${isCurrent ? 'bg-[var(--accent)]' : 'bg-[#666]'}`} />
               
               <div className="text-sm font-semibold text-[#EDEDED]">{job.company}</div>
               <div className="text-[10px] text-[#666] mb-1 font-mono uppercase tracking-wider">

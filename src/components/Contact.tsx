@@ -5,7 +5,7 @@ import { forwardRef } from "react";
 
 export const Contact = forwardRef<HTMLElement>((props, ref) => {
   return (
-    <section ref={ref} id="contact" className="h-full bg-[#00FF41] rounded-3xl p-8 lg:p-12 flex flex-col sm:flex-row justify-between items-center text-black col-span-full mb-8 lg:mb-16">
+    <section ref={ref} id="contact" className="accent-panel h-full rounded-3xl p-8 lg:p-12 flex flex-col sm:flex-row justify-between items-center col-span-full mb-8 lg:mb-16">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         whileInView={{ opacity: 1, x: 0 }}

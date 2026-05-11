@@ -31,10 +31,10 @@ export const Projects = forwardRef<HTMLElement>((props, ref) => {
                   <div className="flex items-center gap-2 mb-1">
                     <div className="text-[10px] font-mono text-[#666] uppercase tracking-widest">{project.type}</div>
                     {(project.status as readonly string[] | undefined)?.includes("live") && (
-                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-mono uppercase tracking-widest font-bold rounded bg-[#00FF41]/10 border border-[#00FF41]/30 text-[#00FF41]">
+                      <span className="inline-flex items-center gap-1 px-1.5 py-0.5 text-[9px] font-mono uppercase tracking-widest font-bold rounded bg-[var(--accent-10)] border border-[var(--accent-30)] text-[var(--accent)]">
                         <span className="relative flex h-1.5 w-1.5">
-                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00FF41] opacity-75"></span>
-                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[#00FF41]"></span>
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[var(--accent)]"></span>
                         </span>
                         Live
                       </span>
@@ -56,7 +56,7 @@ export const Projects = forwardRef<HTMLElement>((props, ref) => {
                       target="_blank"
                       rel="noreferrer"
                       title="PyPI package"
-                      className="p-2 rounded-full text-[#AAA] hover:text-[#00FF41] transition z-10"
+                      className="p-2 rounded-full text-[#AAA] hover:text-[var(--accent)] transition z-10"
                     >
                       <Package className="w-5 h-5" />
                     </a>
@@ -79,11 +79,11 @@ export const Projects = forwardRef<HTMLElement>((props, ref) => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 mt-auto">
                 <div className="bg-[#0F0F0F] p-3 rounded-xl border border-[#222]">
-                  <div className="text-[#00FF41] text-xs mb-1 font-mono">The Problem</div>
+                  <div className="text-[var(--accent)] text-xs mb-1 font-mono">The Problem</div>
                   <div className="text-[11px] text-[#888] leading-tight">{project.problem}</div>
                 </div>
                 <div className="bg-[#0F0F0F] p-3 rounded-xl border border-[#222]">
-                  <div className="text-[#00FF41] text-xs mb-1 font-mono">The Solution</div>
+                  <div className="text-[var(--accent)] text-xs mb-1 font-mono">The Solution</div>
                   <div className="text-[11px] text-[#888] leading-tight">{project.solution}</div>
                 </div>
               </div>

@@ -22,12 +22,12 @@ export const Research = forwardRef<HTMLElement>((props, ref) => {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="flex items-start gap-4"
               >
-                <div className="mt-0.5 flex-shrink-0 p-2 rounded-lg bg-[#1A1A1A] border border-[#333] text-[#00FF41]">
+                <div className="mt-0.5 flex-shrink-0 p-2 rounded-lg bg-[#1A1A1A] border border-[#333] text-[var(--accent)]">
                   <BookOpen className="w-4 h-4" />
                 </div>
                 <div className="min-w-0 flex-1">
                   <h4 className="text-sm font-semibold text-[#EDEDED] mb-1 leading-snug">{item.title}</h4>
-                  <div className="text-[10px] text-[#00FF41] font-mono uppercase tracking-widest mb-2 italic">
+                  <div className="text-[10px] text-[var(--accent)] font-mono uppercase tracking-widest mb-2 italic">
                     {item.publication}
                   </div>
                   <p className="text-xs text-[#AAA] leading-relaxed">
@@ -79,7 +79,7 @@ export const Research = forwardRef<HTMLElement>((props, ref) => {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="flex items-start gap-4"
               >
-                <div className="mt-0.5 flex-shrink-0 p-2 rounded-lg bg-[#1A1A1A] border border-[#333] text-[#00FF41]/70">
+                <div className="mt-0.5 flex-shrink-0 p-2 rounded-lg bg-[#1A1A1A] border border-[#333] text-[var(--accent-70)]">
                   <BookOpen className="w-4 h-4" />
                 </div>
                 <div className="text-xs text-[#CCC] font-medium leading-snug flex-1 min-w-0">
@@ -101,16 +101,16 @@ export const Research = forwardRef<HTMLElement>((props, ref) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="rounded-xl bg-gradient-to-br from-[#00FF41]/5 to-transparent border border-[#00FF41]/20 p-5"
+          className="rounded-xl bg-gradient-to-br from-[var(--accent-5)] to-transparent border border-[var(--accent-20)] p-5"
         >
           <div className="flex items-start gap-3">
-            <div className="p-2 rounded-lg bg-[#00FF41]/10 text-[#00FF41] shrink-0">
+            <div className="p-2 rounded-lg bg-[var(--accent-10)] text-[var(--accent)] shrink-0">
               <Sparkles className="w-4 h-4" />
             </div>
             <div className="min-w-0 flex-1">
               <h4 className="text-sm font-semibold text-[#EDEDED] mb-1">Open Source & Mentorship</h4>
               <p className="text-xs text-[#AAA] leading-relaxed">
-                Author and maintainer of <span className="text-[#00FF41] font-medium">personakit</span> on PyPI. Active mentor in the AI/ML practitioner community on LinkedIn — guiding peers on production LLM systems, RAG and multi-agent architectures.
+                Author and maintainer of <span className="text-[var(--accent)] font-medium">personakit</span> on PyPI. Active mentor in the AI/ML practitioner community on LinkedIn — guiding peers on production LLM systems, RAG and multi-agent architectures.
               </p>
             </div>
           </div>

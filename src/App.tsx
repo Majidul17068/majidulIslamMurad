@@ -12,7 +12,7 @@ import { Footer } from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#050505] text-[#EDEDED] font-sans selection:bg-[#00FF41]/20 selection:text-[#00FF41]">
+    <div className="min-h-screen bg-[#050505] text-[#EDEDED] font-sans selection:bg-[var(--accent-20)] selection:text-[var(--accent)]">
       <Header />
       <main className="max-w-[1400px] mx-auto p-4 sm:p-6 lg:p-8 flex flex-col gap-6 pt-32">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">

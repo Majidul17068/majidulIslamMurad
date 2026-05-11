@@ -17,12 +17,12 @@ export const Hero = forwardRef<HTMLElement>((props, ref) => {
         >
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A1A1A] border border-[#333] text-xs font-mono text-[#AAA] mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#00FF41] animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse" />
               {role}
             </div>
             
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tighter text-[#EDEDED] mb-6 leading-none">
-              Architecting <span className="text-[#00FF41]">Agentic</span> Intelligence.
+              Architecting <span className="accent-text">Agentic</span> Intelligence.
             </h1>
             
             <p className="text-[#AAA] text-base sm:text-lg leading-relaxed max-w-xl mb-10">
@@ -31,9 +31,9 @@ export const Hero = forwardRef<HTMLElement>((props, ref) => {
           </div>
           
           <div>
-            <a 
+            <a
               href="#contact"
-              className="inline-flex justify-center items-center gap-2 bg-[#00FF41] text-black px-6 py-3 rounded-xl font-semibold hover:bg-white transition-colors duration-200 w-fit"
+              className="accent-panel inline-flex justify-center items-center gap-2 px-6 py-3 rounded-xl font-semibold hover:opacity-90 transition-opacity duration-200 w-fit"
             >
               Get in touch <ArrowRight className="w-4 h-4" />
             </a>
@@ -66,8 +66,8 @@ export const Hero = forwardRef<HTMLElement>((props, ref) => {
               alt={name}
               className="w-full h-full object-cover rounded-xl"
             />
-            <div className="pointer-events-none absolute inset-1 rounded-xl ring-1 ring-[#00FF41]/20" />
-            <div className="pointer-events-none absolute -inset-2 rounded-2xl bg-[#00FF41]/10 blur-2xl -z-10" />
+            <div className="pointer-events-none absolute inset-1 rounded-xl ring-1 ring-[var(--accent-20)]" />
+            <div className="pointer-events-none absolute -inset-2 rounded-2xl bg-[var(--accent-10)] blur-2xl -z-10" />
           </div>
         </motion.div>
       </div>

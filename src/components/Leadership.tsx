@@ -16,7 +16,7 @@ const LeadershipCard: FC<{ item: LeadershipItem; index: number }> = ({ item, ind
   const inner = (
     <>
       <div className="flex items-start justify-between gap-2 mb-1">
-        <div className="text-[#00FF41] font-mono text-[10px] uppercase tracking-widest">{item.org}</div>
+        <div className="text-[var(--accent)] font-mono text-[10px] uppercase tracking-widest">{item.org}</div>
         {item.linkUrl && <ArrowUpRight className="w-3 h-3 text-[#555] shrink-0" />}
       </div>
       <h3 className="text-sm font-semibold text-[#EDEDED] mb-1">{item.title}</h3>
@@ -31,7 +31,7 @@ const LeadershipCard: FC<{ item: LeadershipItem; index: number }> = ({ item, ind
                 loading="lazy"
                 className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#00FF41]/10 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--accent-10)] to-transparent pointer-events-none" />
             </div>
           ))}
         </div>
@@ -46,7 +46,7 @@ const LeadershipCard: FC<{ item: LeadershipItem; index: number }> = ({ item, ind
     transition: { delay: index * 0.1, duration: 0.5 },
   };
   const baseClass = "block border-l-2 border-[#333] pl-4 mt-4 first:mt-0";
-  const linkClass = item.linkUrl ? "hover:border-[#00FF41] transition-colors" : "";
+  const linkClass = item.linkUrl ? "hover:border-[var(--accent)] transition-colors" : "";
 
   if (item.linkUrl) {
     return (
@@ -96,8 +96,8 @@ export const Leadership = forwardRef<HTMLElement>((props, ref) => {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="group flex flex-col p-4 rounded-2xl bg-[#111] border border-[#222] hover:border-[#333] transition-colors relative"
               >
-                <ArrowUpRight className="w-4 h-4 text-[#555] group-hover:text-[#00FF41] transition-colors absolute top-4 right-4" />
-                <span className="text-[#00FF41] font-bold text-[10px] uppercase tracking-widest mb-2 opacity-50 block">
+                <ArrowUpRight className="w-4 h-4 text-[#555] group-hover:text-[var(--accent)] transition-colors absolute top-4 right-4" />
+                <span className="text-[var(--accent)] font-bold text-[10px] uppercase tracking-widest mb-2 opacity-50 block">
                   Verified {cert.year}
                 </span>
                 <span className="text-[#EDEDED] text-xs font-semibold pr-6">{cert.name}</span>
