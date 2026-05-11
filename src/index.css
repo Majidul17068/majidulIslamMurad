@@ -50,23 +50,23 @@ html.theme-gemini {
   }
 }
 
-/* Gemini theme: replace flat black with a multi-stop ambient gradient
-   that picks up the same magenta / purple / blue from the logo.
-   Applied as a fixed-attachment background so it stays still while
-   the page scrolls (gives that aurora feel without flicker). */
-html.theme-gemini body {
-  background:
-    radial-gradient(ellipse 55% 40% at 0% 0%, rgba(206, 21, 241, 0.18), transparent 60%),
-    radial-gradient(ellipse 50% 45% at 100% 100%, rgba(41, 88, 251, 0.18), transparent 60%),
-    radial-gradient(ellipse 40% 30% at 50% 50%, rgba(137, 49, 249, 0.08), transparent 70%),
-    #060114;
+/* Gemini theme: replace the flat black surroundings with a multi-stop
+   ambient gradient (logo's magenta / purple / blue). Applied directly
+   to the .app-shell wrapper so it overrides the hardcoded Tailwind
+   utility class and stays full-height/full-bleed. */
+html.theme-gemini .app-shell {
+  background-color: #0A0220 !important;
+  background-image:
+    radial-gradient(ellipse 65% 50% at 5% 5%, rgba(206, 21, 241, 0.38), transparent 65%),
+    radial-gradient(ellipse 60% 55% at 95% 95%, rgba(41, 88, 251, 0.32), transparent 65%),
+    radial-gradient(ellipse 50% 35% at 50% 45%, rgba(137, 49, 249, 0.18), transparent 75%);
   background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-/* The App's outer wrapper hard-codes bg-[#050505]. Make it transparent
-   in Gemini mode so the body's gradient actually shows through. */
-html.theme-gemini .bg-\[\#050505\] {
-  background-color: transparent !important;
+/* Also tint the body underneath in case the wrapper doesn't stretch */
+html.theme-gemini body {
+  background-color: #060114;
 }
 
 @layer utilities {
