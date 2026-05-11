@@ -50,6 +50,25 @@ html.theme-gemini {
   }
 }
 
+/* Gemini theme: replace flat black with a multi-stop ambient gradient
+   that picks up the same magenta / purple / blue from the logo.
+   Applied as a fixed-attachment background so it stays still while
+   the page scrolls (gives that aurora feel without flicker). */
+html.theme-gemini body {
+  background:
+    radial-gradient(ellipse 55% 40% at 0% 0%, rgba(206, 21, 241, 0.18), transparent 60%),
+    radial-gradient(ellipse 50% 45% at 100% 100%, rgba(41, 88, 251, 0.18), transparent 60%),
+    radial-gradient(ellipse 40% 30% at 50% 50%, rgba(137, 49, 249, 0.08), transparent 70%),
+    #060114;
+  background-attachment: fixed;
+}
+
+/* The App's outer wrapper hard-codes bg-[#050505]. Make it transparent
+   in Gemini mode so the body's gradient actually shows through. */
+html.theme-gemini .bg-\[\#050505\] {
+  background-color: transparent !important;
+}
+
 @layer utilities {
   .mask-fade-v {
     mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
