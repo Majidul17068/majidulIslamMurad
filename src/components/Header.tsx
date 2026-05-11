@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Github, Linkedin, Mail, Sparkles } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import { PORTFOLIO_DATA } from "../data/portfolioData";
 import { useEffect, useState } from "react";
 
@@ -47,24 +47,21 @@ export function Header() {
             <Mail className="w-5 h-5" />
           </a>
 
-          {/* Theme toggle — Matrix green ↔ Gemini gradient */}
+          {/* Theme toggle — Matrix green ↔ Gemini gradient. Uses AI logo. */}
           <button
             onClick={toggleTheme}
             aria-label={theme === "matrix" ? "Switch to Gemini AI theme" : "Switch to Matrix theme"}
             title={theme === "matrix" ? "Switch to Gemini AI theme" : "Switch to Matrix theme"}
-            className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-[#1A1A1A] border border-[#333] hover:border-[#555] transition-colors group"
+            className="relative flex items-center justify-center w-9 h-9 rounded-lg hover:scale-110 active:scale-95 transition-transform"
           >
-            <span
-              className="absolute inset-1 rounded-md"
-              style={{
-                background:
-                  theme === "matrix"
-                    ? "linear-gradient(135deg, #4285F4 0%, #9B72CB 50%, #D96570 100%)"
-                    : "linear-gradient(135deg, #00FF41, #008F11)",
-                opacity: 0.85,
-              }}
+            <img
+              src="/ai-logo.png"
+              alt="Theme toggle"
+              className="w-full h-full object-contain"
             />
-            <Sparkles className="relative w-3.5 h-3.5 text-white drop-shadow" />
+            {theme === "gemini" && (
+              <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-white/80" aria-hidden />
+            )}
           </button>
 
           <a
