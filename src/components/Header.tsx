@@ -31,7 +31,11 @@ export function Header() {
         className="bg-[#0F0F0F]/90 backdrop-blur-md border border-[#222] rounded-2xl px-5 py-3 flex items-center justify-between shadow-2xl"
       >
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg accent-brand flex items-center justify-center font-bold text-black text-xs italic">MI</div>
+          <img
+            src="/m-logo.png"
+            alt="Md. Majidul Islam"
+            className="w-8 h-8 object-contain rounded-lg shrink-0"
+          />
           <span className="font-medium tracking-tight text-[#EDEDED] hidden sm:block">
             Md. Majidul Islam <span className="text-[#666] px-2">/</span> AI/ML Engineer
           </span>
