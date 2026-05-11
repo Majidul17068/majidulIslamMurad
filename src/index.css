@@ -71,6 +71,27 @@ html.theme-gemini body {
   background-attachment: fixed;
 }
 
+/* Panel cards: in Matrix mode they're flat #0F0F0F (black). In Gemini
+   mode that reads as black holes against the purple aurora, so we tint
+   them with a subtle purple gradient and a faint accent border. */
+html.theme-gemini section[class*="bg-[#0F0F0F]"] {
+  background: linear-gradient(135deg, rgba(45, 18, 78, 0.95) 0%, rgba(15, 10, 32, 0.95) 100%) !important;
+  border-color: rgba(137, 49, 249, 0.20) !important;
+}
+
+/* Nested panels inside the Hero / Featured Work / Leadership cards
+   also use the same flat bg — tint them too but a notch darker so
+   the visual hierarchy (outer panel > inner card) is preserved. */
+html.theme-gemini [class*="bg-[#111]"]:not(section),
+html.theme-gemini [class*="bg-[#1A1A1A]"]:not(section) {
+  background-color: rgba(20, 12, 40, 0.9) !important;
+}
+
+/* Card borders */
+html.theme-gemini section[class*="border-[#222]"] {
+  border-color: rgba(137, 49, 249, 0.20) !important;
+}
+
 @layer utilities {
   .mask-fade-v {
     mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
