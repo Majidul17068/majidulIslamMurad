@@ -53,22 +53,17 @@ export function Header() {
             <Mail className="w-5 h-5" aria-hidden="true" />
           </a>
 
-          {/* Theme toggle — Matrix green ↔ Gemini aurora. Uses AI logo. */}
+          {/* Theme toggle — a color swatch showing the active theme (Matrix green / Gemini aurora). */}
           <button
             onClick={toggleTheme}
             aria-label={theme === "matrix" ? "Switch to Gemini aurora theme" : "Switch to Matrix theme"}
             aria-pressed={theme === "gemini"}
             title={theme === "matrix" ? "Switch to Gemini aurora theme" : "Switch to Matrix theme"}
-            className={`relative flex items-center justify-center w-6 h-6 rounded-md transition-all hover:scale-110 active:scale-95 ${
-              theme === "gemini" ? "ring-1 ring-[var(--accent-50)] ring-offset-2 ring-offset-[var(--surface)]" : ""
-            }`}
+            className="flex items-center justify-center w-8 h-8 rounded-full border border-[var(--border-strong)] hover:border-[var(--accent-50)] hover:scale-105 active:scale-95 transition-all"
           >
-            <img
-              src="/ai-logo.png"
-              alt=""
-              width={24}
-              height={24}
-              className="w-full h-full object-contain"
+            <span
+              className="w-4 h-4 rounded-full ring-1 ring-black/10 shadow-sm"
+              style={{ background: "var(--accent-panel-bg)" }}
             />
           </button>
 
