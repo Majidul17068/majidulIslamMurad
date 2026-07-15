@@ -7,7 +7,7 @@ export const Hero = forwardRef<HTMLElement>((props, ref) => {
   const { name, role, intro, photo } = PORTFOLIO_DATA.personal;
 
   return (
-    <section ref={ref} className="h-full bg-[#0F0F0F] border border-[#222] rounded-3xl p-8 lg:p-10 flex flex-col justify-between">
+    <section ref={ref} className="h-full bg-[var(--surface)] border border-[var(--border)] rounded-3xl p-8 lg:p-10 flex flex-col justify-between">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start flex-grow">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -16,16 +16,16 @@ export const Hero = forwardRef<HTMLElement>((props, ref) => {
           className="lg:col-span-8 flex flex-col justify-between h-full"
         >
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A1A1A] border border-[#333] text-xs font-mono text-[#AAA] mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--surface-2)] border border-[var(--border-strong)] text-xs font-mono text-[var(--text-muted)] mb-6">
               <span className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse" />
               {role}
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tighter text-[#EDEDED] mb-6 leading-none">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tighter text-[var(--text)] mb-6 leading-none">
               Architecting <span className="accent-text">Agentic</span> Intelligence.
             </h1>
             
-            <p className="text-[#AAA] text-base sm:text-lg leading-relaxed max-w-xl mb-10">
+            <p className="text-[var(--text-muted)] text-base sm:text-lg leading-relaxed max-w-xl mb-10">
               {intro}
             </p>
           </div>
@@ -45,7 +45,7 @@ export const Hero = forwardRef<HTMLElement>((props, ref) => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 + index * 0.1 }}
-                  className="px-3 py-1.5 bg-[#1A1A1A] border border-[#333] rounded-md text-[10px] sm:text-xs uppercase tracking-widest font-bold text-[#EDEDED]"
+                  className="px-3 py-1.5 bg-[var(--surface-2)] border border-[var(--border-strong)] rounded-md text-[10px] sm:text-xs uppercase tracking-widest font-bold text-[var(--text)]"
                 >
                   {highlight}
                 </motion.span>
@@ -60,10 +60,14 @@ export const Hero = forwardRef<HTMLElement>((props, ref) => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="lg:col-span-4 flex justify-center lg:justify-end shrink-0"
         >
-          <div className="relative w-full aspect-square max-w-[300px] rounded-2xl overflow-hidden bg-[#1A1A1A] border border-[#333] p-1">
+          <div className="relative w-full aspect-square max-w-[300px] rounded-2xl overflow-hidden bg-[var(--surface-2)] border border-[var(--border-strong)] p-1">
             <img
               src={photo}
               alt={name}
+              width={600}
+              height={600}
+              fetchPriority="high"
+              decoding="async"
               className="w-full h-full object-cover rounded-xl"
             />
             <div className="pointer-events-none absolute inset-1 rounded-xl ring-1 ring-[var(--accent-20)]" />
