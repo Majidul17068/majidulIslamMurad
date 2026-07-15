@@ -1,12 +1,28 @@
 @import "tailwindcss";
 
 /* ----------------------------------------------------------------------------
-   Theme tokens — Matrix (default) vs Gemini (gradient).
-   Components reference these via var(--accent...) instead of hardcoded hex.
-   Toggle by adding `theme-gemini` class to <html>.
+   Semantic design tokens.
+   Components reference bg-[var(--surface)], text-[var(--text)], etc. — never
+   raw hex — so the whole palette (surface / text / border / accent) swaps by
+   theme with zero per-element overrides.
+     • Matrix  (default) — dark, neon-green accent
+     • Gemini  (toggle)  — light aurora (green → yellow → teal on white)
 ---------------------------------------------------------------------------- */
 :root {
-  /* Matrix green */
+  /* surfaces */
+  --bg: #050505;
+  --surface: #0F0F0F;
+  --surface-2: #1A1A1A;
+  --border: #222222;
+  --border-strong: #333333;
+
+  /* text */
+  --text: #EDEDED;
+  --text-muted: #AAAAAA;
+  --text-subtle: #8A8A8A;
+  --text-faint: #6B6B6B;
+
+  /* accent — Matrix green */
   --accent: #00FF41;
   --accent-strong: #008F11;
   --accent-mid: #00FF41;
@@ -18,95 +34,89 @@
   --accent-60: rgba(0, 255, 65, 0.6);
   --accent-70: rgba(0, 255, 65, 0.7);
   --accent-75: rgba(0, 255, 65, 0.75);
-  /* Used by the Contact CTA panel; switches from solid → gradient */
+
+  --on-accent: #000000;
   --accent-panel-bg: #00FF41;
   --accent-panel-fg: #000000;
 }
 
 html.theme-gemini {
-  /* Sampled directly from /ai-logo.png pentagon: magenta → purple → blue */
-  --accent: #8931F9;            /* logo upper-left purple — primary accent */
-  --accent-strong: #2958FB;     /* logo bottom blue */
-  --accent-mid: #CE15F1;        /* logo top magenta */
-  --accent-5: rgba(137, 49, 249, 0.05);
-  --accent-10: rgba(137, 49, 249, 0.1);
-  --accent-20: rgba(137, 49, 249, 0.2);
-  --accent-30: rgba(137, 49, 249, 0.3);
-  --accent-50: rgba(137, 49, 249, 0.5);
-  --accent-60: rgba(137, 49, 249, 0.6);
-  --accent-70: rgba(137, 49, 249, 0.7);
-  --accent-75: rgba(137, 49, 249, 0.75);
-  --accent-panel-bg: linear-gradient(135deg, #CE15F1 0%, #8931F9 50%, #2958FB 100%);
-  --accent-panel-fg: #ffffff;
+  /* surfaces — frosted white glass over the aurora */
+  --bg: #F4F6F2;
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-2: rgba(255, 255, 255, 0.52);
+  --border: rgba(22, 40, 27, 0.10);
+  --border-strong: rgba(22, 40, 27, 0.18);
+
+  /* text — deep green-black for readability on light aurora */
+  --text: #16261B;
+  --text-muted: #3C4A40;
+  --text-subtle: #566259;
+  --text-faint: #8A968C;
+
+  /* accent — deep emerald (≈5:1 on white for small text) */
+  --accent: #0B7A4B;
+  --accent-strong: #0D9488;
+  --accent-mid: #16A34A;
+  --accent-5: rgba(11, 122, 75, 0.05);
+  --accent-10: rgba(11, 122, 75, 0.10);
+  --accent-20: rgba(11, 122, 75, 0.16);
+  --accent-30: rgba(11, 122, 75, 0.26);
+  --accent-50: rgba(11, 122, 75, 0.42);
+  --accent-60: rgba(11, 122, 75, 0.55);
+  --accent-70: rgba(11, 122, 75, 0.68);
+  --accent-75: rgba(11, 122, 75, 0.75);
+
+  --on-accent: #14321F;
+  --accent-panel-bg: linear-gradient(120deg, #BFE86B 0%, #8FE3C4 46%, #A7D8F5 100%);
+  --accent-panel-fg: #14321F;
 }
 
 @layer base {
   body {
-    @apply bg-[#050505] text-[#EDEDED] antialiased;
+    @apply antialiased;
+    background: var(--bg);
+    color: var(--text);
   }
   ::selection {
     background-color: var(--accent-30);
     color: var(--accent);
   }
+  /* Keyboard focus ring — visible in both themes */
+  :where(a, button, [tabindex], input, textarea, select):focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
 }
 
-/* Gemini theme: strong purple→blue diagonal base + radial accent blobs
-   (logo's magenta / purple / blue). Linear gradient gives the page a
-   clearly colored bg everywhere; radials add depth at the corners. */
+/* ----------------------------------------------------------------------------
+   Gemini theme — light aurora background (green → yellow → teal → sky on white)
+   painted on the app shell; frosted-glass cards blur the aurora behind them.
+---------------------------------------------------------------------------- */
 html.theme-gemini .app-shell {
   background:
-    radial-gradient(ellipse 85% 60% at 0% 0%, rgba(206, 21, 241, 0.55), transparent 65%),
-    radial-gradient(ellipse 85% 65% at 100% 100%, rgba(41, 88, 251, 0.50), transparent 65%),
-    radial-gradient(ellipse 60% 40% at 50% 50%, rgba(137, 49, 249, 0.25), transparent 75%),
-    linear-gradient(135deg, #2A0A4D 0%, #160F3A 45%, #07112B 100%)
-    !important;
+    radial-gradient(ellipse 55% 45% at 22% 26%, rgba(163, 216, 102, 0.60), transparent 62%),
+    radial-gradient(ellipse 44% 42% at 46% 44%, rgba(245, 224, 102, 0.50), transparent 58%),
+    radial-gradient(ellipse 60% 55% at 80% 66%, rgba(114, 216, 196, 0.58), transparent 62%),
+    radial-gradient(ellipse 46% 40% at 90% 20%, rgba(150, 200, 245, 0.42), transparent 62%),
+    radial-gradient(ellipse 52% 46% at 58% 90%, rgba(180, 224, 150, 0.36), transparent 62%),
+    var(--bg) !important;
   background-attachment: fixed !important;
   background-repeat: no-repeat !important;
 }
-
-/* Body underneath the wrapper picks up the linear gradient too, so
-   any edge of the page that the wrapper doesn't cover stays themed. */
 html.theme-gemini body {
-  background: linear-gradient(135deg, #2A0A4D 0%, #160F3A 45%, #07112B 100%);
+  background: var(--bg);
   background-attachment: fixed;
 }
 
-/* Section panel cards (Hero, About, Featured Work, etc.): in Matrix
-   mode they're flat #0F0F0F (black). In Gemini mode that reads as
-   black holes against the purple aurora, so we tint them with a
-   subtle purple gradient and a faint accent border. */
-html.theme-gemini section[class*="bg-[#0F0F0F]"] {
-  background: linear-gradient(135deg, rgba(45, 18, 78, 0.95) 0%, rgba(15, 10, 32, 0.95) 100%) !important;
-  border-color: rgba(137, 49, 249, 0.20) !important;
-}
-
-/* Navbar (header element) uses bg-[#0F0F0F]/90 — keep some
-   translucency so the aurora shows through behind the pill. */
-html.theme-gemini header[class*="bg-[#0F0F0F]"] {
-  background: rgba(30, 15, 65, 0.85) !important;
-  border-color: rgba(137, 49, 249, 0.25) !important;
-}
-
-/* Featured Work project cards use a different gradient
-   (bg-gradient-to-br from-[#111] to-[#0A0A0A]). Target them via the
-   `from-[#111]` class fragment and replace with a purple gradient. */
-html.theme-gemini [class*="from-[#111]"] {
-  background: linear-gradient(135deg, rgba(50, 22, 88, 0.92) 0%, rgba(18, 11, 36, 0.95) 100%) !important;
-  border-color: rgba(137, 49, 249, 0.22) !important;
-}
-
-/* Nested elements inside cards (Problem/Solution boxes, skill chips,
-   icon containers) use #111, #1A1A1A, #161616. Tint slightly darker
-   than the parent so the hierarchy (outer panel > inner block) stays. */
-html.theme-gemini [class*="bg-[#111]"]:not(section):not([class*="from-"]),
-html.theme-gemini [class*="bg-[#1A1A1A]"]:not(section),
-html.theme-gemini [class*="bg-[#161616]"]:not(section) {
-  background-color: rgba(20, 12, 40, 0.9) !important;
-}
-
-/* Outer card borders */
-html.theme-gemini section[class*="border-[#222]"] {
-  border-color: rgba(137, 49, 249, 0.20) !important;
+/* Frosted-glass cards in Gemini mode: the translucent --surface lets the
+   aurora glow through, blurred for a clean Gemini-brand feel. In Matrix mode
+   --surface is opaque, so the blur is a harmless no-op. */
+html.theme-gemini section,
+html.theme-gemini header {
+  -webkit-backdrop-filter: blur(16px) saturate(1.15);
+  backdrop-filter: blur(16px) saturate(1.15);
 }
 
 @layer utilities {
@@ -120,7 +130,7 @@ html.theme-gemini section[class*="border-[#222]"] {
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  /* Used by Contact CTA: solid in matrix theme, gradient in gemini theme */
+  /* Contact / Hero CTA: solid green in Matrix, light aurora gradient in Gemini */
   .accent-panel {
     background: var(--accent-panel-bg);
     color: var(--accent-panel-fg);
@@ -128,22 +138,30 @@ html.theme-gemini section[class*="border-[#222]"] {
   .accent-panel-fg {
     color: var(--accent-panel-fg);
   }
-  /* Gradient text for the Hero word "Agentic" — single color in matrix, gradient in gemini */
+  /* Hero word "Agentic": accent color in Matrix, green→teal→sky gradient in Gemini */
   .accent-text {
     color: var(--accent);
   }
   html.theme-gemini .accent-text {
-    background: linear-gradient(90deg, #CE15F1, #8931F9, #2958FB);
+    background: linear-gradient(90deg, #16A34A, #0D9488, #0EA5E9);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
   }
-  /* Header MI logo brand mark */
   .accent-brand {
     background: linear-gradient(135deg, var(--accent), var(--accent-strong));
   }
-  html.theme-gemini .accent-brand {
-    background: linear-gradient(135deg, #CE15F1, #8931F9, #2958FB);
+}
+
+/* Respect users who prefer reduced motion — neutralize animations/transitions */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }
