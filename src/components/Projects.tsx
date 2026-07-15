@@ -77,7 +77,7 @@ export const Projects = forwardRef<HTMLElement>((props, ref) => {
                 {project.description}
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 mt-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
                 <div className="bg-[var(--surface)] p-3 rounded-xl border border-[var(--border)]">
                   <div className="text-[var(--accent)] text-xs mb-1 font-mono">The Problem</div>
                   <div className="text-[11px] text-[var(--text-muted)] leading-tight">{project.problem}</div>
