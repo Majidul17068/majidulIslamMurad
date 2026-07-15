@@ -13,8 +13,8 @@ export const TechStack = forwardRef<HTMLElement>((props, ref) => {
   ];
 
   return (
-    <section ref={ref} className="h-full bg-[#0F0F0F] border border-[#222] rounded-3xl p-6 lg:p-8 flex flex-col justify-center overflow-hidden">
-      <h2 className="text-sm font-mono text-[#666] uppercase mb-8 tracking-widest text-center sm:text-left">Tech Stack</h2>
+    <section ref={ref} className="h-full bg-[var(--surface)] border border-[var(--border)] rounded-3xl p-6 lg:p-8 flex flex-col justify-center overflow-hidden">
+      <h2 className="text-sm font-mono text-[var(--text-subtle)] uppercase mb-8 tracking-widest text-center sm:text-left">Tech Stack</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         {categories.map((cat, idx) => (
           <motion.div 
@@ -25,7 +25,7 @@ export const TechStack = forwardRef<HTMLElement>((props, ref) => {
             transition={{ delay: idx * 0.1, duration: 0.5 }}
             className="flex flex-col h-full"
           >
-            <h3 className="text-[10px] font-mono text-[#555] mb-4 uppercase tracking-widest text-center sm:text-left">{cat.label}</h3>
+            <h3 className="text-[10px] font-mono text-[var(--text-faint)] mb-4 uppercase tracking-widest text-center sm:text-left">{cat.label}</h3>
             
             <div className="relative h-32 overflow-hidden mask-fade-v">
               <motion.ul
@@ -39,7 +39,7 @@ export const TechStack = forwardRef<HTMLElement>((props, ref) => {
               >
                 {/* Double the items for seamless loop */}
                 {[...cat.items, ...cat.items].map((item, iDx) => (
-                  <li key={`${idx}-${iDx}`} className="text-[#AAA] text-xs font-medium text-center sm:text-left whitespace-nowrap">
+                  <li key={`${idx}-${iDx}`} className="text-[var(--text-muted)] text-xs font-medium text-center sm:text-left">
                     {item}
                   </li>
                 ))}
