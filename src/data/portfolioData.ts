@@ -133,6 +133,18 @@ Two of my AI platforms are live in production today — Empathika for healthcare
   ],
   projects: [
     {
+      name: "spyv",
+      type: "Open Source Security Tool",
+      description: "Prompt-security testing for AI engineers — discover, audit, red-team and guard every LLM prompt.",
+      problem: "LLM prompts across a codebase go untested; secrets, PII and prompt-injection leaks reach production with no deterministic safety net.",
+      solution: "A framework-agnostic tool that discovers every prompt via static AST (no code execution), then audits, red-teams and guards them — deterministic checkers (secrets/PII/prompt-leak) fused with a hardened LLM judge via union/override hybrid verdicts, plus a runtime guard decorator.",
+      tech: "Python, AST, LiteLLM, Pytest, GitHub Actions (CI/CD)",
+      impact: "Live on PyPI, continuously versioned. Bring-your-own-model across OpenAI, Anthropic, Gemini and local vLLM/Ollama.",
+      link: "https://github.com/Majidul17068/spyv",
+      pypiUrl: "https://pypi.org/project/spyv/",
+      status: ["live", "oss"] as const,
+    },
+    {
       name: "personakit",
       type: "Open Source Framework",
       description: "A declarative Python library for building role-based LLM agents.",
@@ -142,18 +154,6 @@ Two of my AI platforms are live in production today — Empathika for healthcare
       impact: "11 releases shipped to PyPI. Wired for production with token tracking across 30 models and cross-provider standardizations.",
       link: "https://github.com/Majidul17068/personakit",
       pypiUrl: "https://pypi.org/project/personakit/",
-      status: ["live", "oss"] as const,
-    },
-    {
-      name: "spyv",
-      type: "Open Source Security Tool",
-      description: "Prompt-security testing for AI engineers — discover, audit, red-team and guard every LLM prompt.",
-      problem: "LLM prompts across a codebase go untested; secrets, PII and prompt-injection leaks reach production with no deterministic safety net.",
-      solution: "A framework-agnostic tool that discovers every prompt via static AST (no code execution), then audits, red-teams and guards them — deterministic checkers (secrets/PII/prompt-leak) fused with a hardened LLM judge via union/override hybrid verdicts, plus a runtime @guard.",
-      tech: "Python, AST, LiteLLM, Pytest, GitHub Actions (CI/CD)",
-      impact: "Live on PyPI, continuously versioned. Bring-your-own-model across OpenAI, Anthropic, Gemini and local vLLM/Ollama.",
-      link: "https://github.com/Majidul17068/spyv",
-      pypiUrl: "https://pypi.org/project/spyv/",
       status: ["live", "oss"] as const,
     },
     {
