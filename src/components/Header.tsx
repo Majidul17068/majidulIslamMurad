@@ -7,9 +7,9 @@ type Theme = "matrix" | "gemini";
 
 export function Header() {
   const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === "undefined") return "matrix";
+    if (typeof window === "undefined") return "gemini";
     const stored = window.localStorage.getItem("portfolio-theme");
-    return stored === "gemini" ? "gemini" : "matrix";
+    return stored === "matrix" ? "matrix" : "gemini";
   });
 
   useEffect(() => {
@@ -28,7 +28,7 @@ export function Header() {
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
-        className="bg-[var(--surface)] backdrop-blur-md border border-[var(--border)] rounded-2xl px-5 py-3 flex items-center justify-between shadow-2xl"
+        className="nav-panel border border-[var(--border)] rounded-2xl px-5 py-3 flex items-center justify-between shadow-2xl"
       >
         <div className="flex items-center gap-3">
           <img
