@@ -1,4 +1,4 @@
-import { Code2, Cpu, Database, LayoutGrid, Network, Server, Sparkles, TerminalSquare } from "lucide-react";
+import { Cpu, Database, Network, Server } from "lucide-react";
 
 export const PORTFOLIO_DATA = {
   personal: {
@@ -6,14 +6,14 @@ export const PORTFOLIO_DATA = {
     role: "AI/ML Engineer & Architect",
     tagline: "Building intelligent systems that turn data into decisions and automation into advantage.",
     intro:
-      "I architect production-grade AI systems end-to-end — from edge deployment on NVIDIA GPUs to multi-agent LLM orchestration. Three live AI platforms shipped (healthcare, enterprise RAG, financial automation), author of personakit on PyPI, IEEE-published on banking cybersecurity.",
+      "I architect production-grade AI systems end-to-end — from edge deployment on NVIDIA GPUs to multi-agent LLM orchestration. Live AI platforms in production (healthcare and a financial GraphRAG chatbot), author of two open-source tools on PyPI — personakit and spyv — IEEE-published on banking cybersecurity.",
     highlights: [
-      "Author & Maintainer of personakit (Open Source LLM Agent Framework on PyPI)",
-      "3 live AI platforms in production — Empathika, HR Policy Chatbot, Bank Reconciliation",
+      "Author & Maintainer of two open-source LLM tools on PyPI — personakit & spyv",
+      "Live AI platforms in production — Empathika (healthcare) & a FinTech GraphRAG chatbot (Neo4j)",
       "Edge AI on NVIDIA Jetson with TensorRT, FP16/INT8 quantization",
       "IEEE-published researcher on banking cybersecurity",
     ],
-    photo: "/profile.png",
+    photo: "/profile.jpg",
     cvLink: "/cv.pdf",
     email: "contact.majidul.islam@gmail.com",
     github: "Majidul17068",
@@ -23,7 +23,7 @@ export const PORTFOLIO_DATA = {
   about: {
     narrative: `I architect production AI systems end-to-end — from research and fine-tuning through deployment, monitoring and observability. My daily work spans multi-agent orchestration with LangGraph and CrewAI, low-latency edge inference using CUDA and TensorRT, and rigorous MLOps.
 
-Three of my AI platforms are live in production today — for healthcare care planning, enterprise HR retrieval, and bank reconciliation. I author personakit, an open-source declarative LLM agent library on PyPI, and am IEEE-published on banking cybersecurity. I care about AI that ships, holds up under real load, and earns trust — not benchmarks or demos.`,
+Two of my AI platforms are live in production today — Empathika for healthcare (medication, shift and care management) and a FinTech GraphRAG chatbot for financial fraud and corporate intelligence over Neo4j. I author two open-source LLM tools on PyPI — personakit (declarative agent builder) and spyv (prompt-security testing) — and am IEEE-published on banking cybersecurity. I care about AI that ships, holds up under real load, and earns trust — not benchmarks or demos.`,
   },
   expertise: [
     {
@@ -145,33 +145,36 @@ Three of my AI platforms are live in production today — for healthcare care pl
       status: ["live", "oss"] as const,
     },
     {
+      name: "spyv",
+      type: "Open Source Security Tool",
+      description: "Prompt-security testing for AI engineers — discover, audit, red-team and guard every LLM prompt.",
+      problem: "LLM prompts across a codebase go untested; secrets, PII and prompt-injection leaks reach production with no deterministic safety net.",
+      solution: "A framework-agnostic tool that discovers every prompt via static AST (no code execution), then audits, red-teams and guards them — deterministic checkers (secrets/PII/prompt-leak) fused with a hardened LLM judge via union/override hybrid verdicts, plus a runtime @guard.",
+      tech: "Python, AST, LiteLLM, Pytest, GitHub Actions (CI/CD)",
+      impact: "Live on PyPI, continuously versioned. Bring-your-own-model across OpenAI, Anthropic, Gemini and local vLLM/Ollama.",
+      link: "https://github.com/Majidul17068/spyv",
+      pypiUrl: "https://pypi.org/project/spyv/",
+      status: ["live", "oss"] as const,
+    },
+    {
       name: "Empathika",
       type: "Healthcare AI Platform",
-      description: "Multi-Agent RAG for Care & Medication workflows.",
-      problem: "Clinical decision-making requires vast, rapidly-accessible knowledge strictly grounded in medical literature.",
-      solution: "A multi-agent system combining RAG over clinical records with external medical knowledge. Driven by the personakit library.",
-      tech: "Agentic Frameworks, Vector DBs, Edge AI",
-      impact: "Currently live in production. Serves real users for care planning and medication safety with citation-backed responses.",
+      description: "Multi-Agent RAG platform across medication, shift and care management.",
+      problem: "Clinical workflows need vast, rapidly-accessible knowledge grounded in medical literature — across medication safety, staff scheduling and care planning.",
+      solution: "Three modules: medication (OCR + AI-booster extraction), shift management (AI scheduling), and care management (multi-agent RAG over clinical records + external medical knowledge, powered by personakit).",
+      tech: "Multi-Agent, RAG, OCR, Vector DBs, personakit",
+      impact: "Currently live in production. Medication OCR + AI-booster reaches 97% accuracy; citation-backed care planning for real users.",
       status: ["live"] as const,
     },
     {
-      name: "HR Policy Chatbot",
-      type: "Enterprise RAG",
-      description: "Agentic RAG queries for large organizational policies.",
-      problem: "Employees struggle to navigate massive, fragmented internal HR documents.",
-      solution: "An agentic RAG built on DeepSeek models and ChromaDB, supporting English and Bangla queries.",
-      tech: "DeepSeek, ChromaDB, LangChain",
-      impact: "Live at a large enterprise (Kazi Farms Group). Empowers thousands of employees with instant, fully attributed answers.",
-      status: ["live"] as const,
-    },
-    {
-      name: "Bank Reconciliation AI",
-      type: "Financial Automation",
-      description: "Smart financial workflow automation system.",
-      problem: "Manual bank statement reconciliation is error-prone and time-consuming at an enterprise scale.",
-      solution: "An intelligent AI system that automatically maps and matches bank statements with internal records.",
-      tech: "Machine Learning, FastAPI, Automated Workflows",
-      impact: "Live in production. Drastically reduces manual finance work, accelerating monthly close efforts securely.",
+      name: "FinTech GraphRAG Chatbot",
+      type: "Financial Intelligence",
+      description: "Multi-agent GraphRAG for fraud & corporate intelligence over a Neo4j knowledge graph.",
+      problem: "Tracing money-laundering paths, shell/nominee ownership and conflicts of interest across corporate transaction graphs is slow and manual.",
+      solution: "A multi-agent system (Orchestrator, Translator, Auditor, Forensic Analyst) that turns natural-language questions into Cypher over Neo4j, with a self-correcting query loop.",
+      tech: "Neo4j, Cypher, Multi-Agent, Gemini, Streamlit",
+      impact: "Live. Detects money-laundering paths, shell/nominee structures and conflicts of interest. Public demo open-sourced.",
+      link: "https://github.com/Majidul17068/agentic-corporate-forensics",
       status: ["live"] as const,
     },
     {
@@ -182,15 +185,6 @@ Three of my AI platforms are live in production today — for healthcare care pl
       solution: "Leveraged historical sales data, seasonal trends, and external factors for accurate forecasting.",
       tech: "Pandas, Scikit-Learn, PySpark",
       impact: "Enabled data-driven decision making for marketing and supply chain teams via predictive dashboards.",
-    },
-    {
-      name: "NHS Medicine Parser",
-      type: "Healthcare Data Automation",
-      description: "Automated system for parsing critical healthcare data.",
-      problem: "Fragmented and unstructured medical records in NHS systems leading to poor accessibility.",
-      solution: "NLP-based system to parse and extract critical data from NHS medical records.",
-      tech: "Python, NLP, OCR",
-      impact: "Significantly improved healthcare data accessibility and processing efficiency.",
     },
   ],
   techStack: {
@@ -206,6 +200,7 @@ Three of my AI platforms are live in production today — for healthcare care pl
       "TensorFlow",
       "ChromaDB",
       "Pinecone",
+      "Neo4j",
       "MLflow",
       "Phoenix",
       "Langfuse",
@@ -245,12 +240,12 @@ Three of my AI platforms are live in production today — for healthcare care pl
     ],
   },
   openSource: {
-    title: "Personakit Ecosystem",
-    description: "Driving declarative agent architecture for production environments.",
+    title: "Open-Source Tooling",
+    description: "Two production-grade OSS tools on PyPI — personakit (declarative LLM agents) and spyv (prompt-security testing).",
     highlights: [
-      "Differentiator: First-class 'red flag' primitives mapped deterministically.",
-      "Auditable: Built for clinical, legal, and fintech use cases.",
-      "Reliability: 93 unit tests, strict type-checking, bundled domain specialists.",
+      "personakit: first-class 'red flag' primitives, 93 unit tests, strict typing, bundled domain specialists.",
+      "spyv: AST-based prompt discovery + deterministic secret/PII/leak checkers + runtime @guard.",
+      "Bring-your-own-model, auditable for clinical/legal/fintech, full CI/CD & Trusted Publishing.",
     ],
   },
   leadership: [
