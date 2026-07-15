@@ -1,10 +1,18 @@
-import {StrictMode} from 'react';
-import {createRoot} from 'react-dom/client';
+import { StrictMode } from 'react';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 
-createRoot(document.getElementById('root')!).render(
+const container = document.getElementById('root')!;
+const app = (
   <StrictMode>
     <App />
-  </StrictMode>,
+  </StrictMode>
 );
+
+// Hydrate when the HTML was prerendered (build:static); otherwise mount fresh.
+if (container.hasChildNodes()) {
+  hydrateRoot(container, app);
+} else {
+  createRoot(container).render(app);
+}
