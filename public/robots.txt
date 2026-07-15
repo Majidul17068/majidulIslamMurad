@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://majidulislam.com.bd/sitemap.xml
