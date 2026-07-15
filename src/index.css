@@ -119,6 +119,17 @@ html.theme-gemini header {
   backdrop-filter: blur(16px) saturate(1.15);
 }
 
+/* Floating navigation — frosted glass, more transparent than the section cards
+   so the aurora / content glides beneath it while text stays legible. */
+.nav-panel {
+  background: rgba(15, 15, 15, 0.55);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  backdrop-filter: blur(16px) saturate(1.2);
+}
+html.theme-gemini .nav-panel {
+  background: rgba(255, 255, 255, 0.48);
+}
+
 @layer utilities {
   .mask-fade-v {
     mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
