@@ -21,9 +21,9 @@ export const PORTFOLIO_DATA = {
     website: "majidulislam.com.bd",
   },
   about: {
-    narrative: `I architect production AI systems end-to-end — from research and fine-tuning through deployment, monitoring and observability. My daily work spans multi-agent orchestration with LangGraph and CrewAI, low-latency edge inference using CUDA and TensorRT, and rigorous MLOps.
+    narrative: `I architect production AI systems end-to-end — from research and fine-tuning through deployment, observability and long-term reliability. My work spans multi-agent orchestration (LangGraph, CrewAI), low-latency edge inference (CUDA, TensorRT) and disciplined MLOps.
 
-Two of my AI platforms are live in production today — Empathika for healthcare (medication, shift and care management) and a FinTech GraphRAG chatbot for financial fraud and corporate intelligence over Neo4j. I author two open-source LLM tools on PyPI — personakit (declarative agent builder) and spyv (prompt-security testing) — and am IEEE-published on banking cybersecurity. I care about AI that ships, holds up under real load, and earns trust — not benchmarks or demos.`,
+Two platforms run in production today: Empathika (healthcare — medication, shift and care management) and a FinTech GraphRAG chatbot (financial fraud and corporate intelligence over Neo4j). I author and maintain two open-source LLM tools on PyPI — personakit (declarative agent builder) and spyv (prompt-security testing) — and am an IEEE-published author on banking cybersecurity. I build AI that ships, holds up under real load, and earns trust.`,
   },
   expertise: [
     {
@@ -135,7 +135,7 @@ Two of my AI platforms are live in production today — Empathika for healthcare
     {
       name: "spyv",
       type: "Open Source Security Tool",
-      description: "Prompt-security testing for AI engineers — discover, audit, red-team and guard every LLM prompt.",
+      description: "Prompt-security testing for AI engineers — discover, audit, red-team and guard every LLM prompt. Framework-agnostic, bring-your-own-model, and live on PyPI with full CI/CD.",
       problem: "LLM prompts across a codebase go untested; secrets, PII and prompt-injection leaks reach production with no deterministic safety net.",
       solution: "A framework-agnostic tool that discovers every prompt via static AST (no code execution), then audits, red-teams and guards them — deterministic checkers (secrets/PII/prompt-leak) fused with a hardened LLM judge via union/override hybrid verdicts, plus a runtime guard decorator.",
       tech: "Python, AST, LiteLLM, Pytest, GitHub Actions (CI/CD)",
@@ -147,7 +147,7 @@ Two of my AI platforms are live in production today — Empathika for healthcare
     {
       name: "personakit",
       type: "Open Source Framework",
-      description: "A declarative Python library for building role-based LLM agents.",
+      description: "A declarative Python library for building production-grade, role-based LLM agents — persona, frameworks, probes and red flags as data, not hand-wired chains. 11 releases on PyPI.",
       problem: "Traditional agent building involves messy, hand-wired chains lacking standardized behavioral controls.",
       solution: "A unified data object handling personas, frameworks, probes, and red flags declaratively.",
       tech: "Python, OpenTelemetry, LiteLLM, GitHub Actions (CI/CD)",
@@ -159,7 +159,7 @@ Two of my AI platforms are live in production today — Empathika for healthcare
     {
       name: "Empathika",
       type: "Healthcare AI Platform",
-      description: "Multi-Agent RAG platform across medication, shift and care management.",
+      description: "A live multi-agent RAG platform for healthcare — medication safety (OCR + AI booster at 97% accuracy), AI shift management, and citation-backed care planning.",
       problem: "Clinical workflows need vast, rapidly-accessible knowledge grounded in medical literature — across medication safety, staff scheduling and care planning.",
       solution: "Three modules: medication (OCR + AI-booster extraction), shift management (AI scheduling), and care management (multi-agent RAG over clinical records + external medical knowledge, powered by personakit).",
       tech: "Multi-Agent, RAG, OCR, Vector DBs, personakit",
@@ -169,7 +169,7 @@ Two of my AI platforms are live in production today — Empathika for healthcare
     {
       name: "FinTech GraphRAG Chatbot",
       type: "Financial Intelligence",
-      description: "Multi-agent GraphRAG for fraud & corporate intelligence over a Neo4j knowledge graph.",
+      description: "A live multi-agent GraphRAG chatbot that turns natural language into Cypher over a Neo4j graph to trace money-laundering paths, shell ownership and conflicts of interest.",
       problem: "Tracing money-laundering paths, shell/nominee ownership and conflicts of interest across corporate transaction graphs is slow and manual.",
       solution: "A multi-agent system (Orchestrator, Translator, Auditor, Forensic Analyst) that turns natural-language questions into Cypher over Neo4j, with a self-correcting query loop.",
       tech: "Neo4j, Cypher, Multi-Agent, Gemini, Streamlit",
@@ -180,7 +180,7 @@ Two of my AI platforms are live in production today — Empathika for healthcare
     {
       name: "Sales Forecasting (Big Data)",
       type: "Predictive Analytics",
-      description: "Machine learning based sales forecasting system.",
+      description: "A machine-learning sales-forecasting system using historical trends, seasonality and external signals to drive inventory and supply-chain decisions.",
       problem: "Inefficient inventory and supply chain management due to lack of accurate demand predictions.",
       solution: "Leveraged historical sales data, seasonal trends, and external factors for accurate forecasting.",
       tech: "Pandas, Scikit-Learn, PySpark",
