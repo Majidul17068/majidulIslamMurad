@@ -110,7 +110,7 @@ export const Research = forwardRef<HTMLElement>((props, ref) => {
             <div className="min-w-0 flex-1">
               <h4 className="text-sm font-semibold text-[var(--text)] mb-1">Open Source & Mentorship</h4>
               <p className="text-xs text-[var(--text-muted)] leading-relaxed">
-                Author and maintainer of <span className="text-[var(--accent)] font-medium">personakit</span> on PyPI. Active mentor in the AI/ML practitioner community on LinkedIn — guiding peers on production LLM systems, RAG and multi-agent architectures.
+                Author and maintainer of two open-source Python tools on PyPI — <span className="text-[var(--accent)] font-medium">personakit</span> (declarative LLM agents) and <span className="text-[var(--accent)] font-medium">spyv</span> (prompt-security testing). Active mentor in the AI/ML practitioner community, guiding engineers on production LLM systems, RAG and multi-agent architecture.
               </p>
             </div>
           </div>
